@@ -1,13 +1,15 @@
 package poo.trabalho.modal;
 
+import java.util.Date;
+
 public class Medico extends Pessoa{
 	
 	private String crm;
 	private String especialidade;
 	
 	//Inicializador 
-	public Medico(String crm, String especialidade) {
-		super();
+	public Medico(String nome, String endereco, char sexo, Date dataNascimento, String crm, String especialidade) {
+		super(nome, endereco, sexo, dataNascimento);
 		this.crm = crm;
 		this.especialidade = especialidade;
 	}
@@ -16,6 +18,7 @@ public class Medico extends Pessoa{
 	public String getCrm() {
 		return crm;
 	}
+	
 	public void setCrm(String crm) {
 		this.crm = crm;
 	}
