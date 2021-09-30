@@ -5,13 +5,13 @@ import java.util.Date;
 public class Pessoa {
 	
 	private String nome;
-	private String endereco;
+	private Endereco endereco;
 	private char sexo;
 	private Date dataNascimento;
 	
 	
 	
-	public Pessoa(String nome, String endereco, char sexo, Date dataNascimento) {
+	public Pessoa(String nome, Endereco endereco, char sexo, Date dataNascimento) {
 		super();
 		this.nome = nome;
 		this.endereco = endereco;
@@ -26,10 +26,10 @@ public class Pessoa {
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
-	public String getEndereco() {
+	public Endereco getEndereco() {
 		return endereco;
 	}
-	public void setEndereco(String endereco) {
+	public void setEndereco(Endereco endereco) {
 		this.endereco = endereco;
 	}
 	public char getSexo() {
