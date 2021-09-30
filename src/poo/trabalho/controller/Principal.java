@@ -1,21 +1,20 @@
 package poo.trabalho.controller;
 
-import java.util.ArrayList;
 import java.util.Scanner;
 
-import poo.trabalho.modal.Endereco;
 import poo.trabalho.modal.Hospital;
+import poo.trabalho.modal.Medico;
+import poo.trabalho.modal.Paciente;
+import poo.trabalho.view.MedicoView;
+import poo.trabalho.view.PacienteView;
 
 public class Principal {
 	
-	private static Hospital hospital;
+	private static Hospital hospital = new Hospital();
 	
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
     	int opcao = -1;
-    	
-    	Endereco enderecoHospital = new Endereco("Área Especial 8, 9, 10, St. C Norte Qnc", "Taguatinga Norte", "Brasília", "DF", "72115-700");
-    	hospital = new Hospital("Anchienta", enderecoHospital, new ArrayList<>(), new ArrayList<>());
     	
     	do {
     		System.out.println("-------------------------------");
@@ -30,13 +29,18 @@ public class Principal {
 	    	System.out.println("-------------------------------");
 	    	System.out.print("Escolha uma opção -> ");
 	    	opcao = scanner.nextInt();
+	    	scanner.nextLine();
 
 	        switch(opcao) {
 		        case 1:
-		        	// Cadastrar paciente
+		        	Paciente paciente = PacienteView.printCadastroPaciente(scanner);
+		        	
+		        	hospital.cadastrarPaciente(paciente);
 		            break;
 		        case 2:
-		        	// Cadastrar médico
+		        	Medico medico = MedicoView.printMedico(scanner);
+		        	
+		        	hospital.cadastrarMedico(medico);
 		            break;
 		        case 3:
 		        	// Buscar paciente
@@ -45,7 +49,9 @@ public class Principal {
 		        	// Buscar médico
 		        	break;
 		        case 5:
-		        	// Imprimir pacientes
+		        	PacienteView.printInfoPacientes();
+		        	
+		        	scanner.nextLine();
 		        	break;
 		        case 6:
 		        	// Imprimir médicos
@@ -55,7 +61,8 @@ public class Principal {
 		        	break;
 		        default: 
 		        	System.out.println("Opção inválida... Tente novamente.");
-		        	scanner.next();
+		        	
+		        	scanner.nextLine();
 		        	break;
 	        }
     	} while(opcao != 0);

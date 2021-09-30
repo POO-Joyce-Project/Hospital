@@ -1,6 +1,8 @@
 package poo.trabalho.modal;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.function.Predicate;
 
 public class Hospital {
 
@@ -8,14 +10,14 @@ public class Hospital {
 	private Endereco endereco;
 	private List<Medico> medicos;
 	private List<Paciente> pacientes;
-	
-	public Hospital(String nome, Endereco endereco, List<Medico> medicos, List<Paciente> pacientes) {
-		this.nome = nome;
-		this.endereco = endereco;
-		this.medicos = medicos;
-		this.pacientes = pacientes;
+
+	public Hospital() {
+		this.nome = "Anchieta";
+		this.endereco = new Endereco("Área Especial 8, 9, 10, St. C Norte Qnc", "Brasília-DF");
+		this.medicos = new ArrayList<>();
+		this.pacientes = new ArrayList<>();
 	}
-	
+
 	public String getNome() {
 		return nome;
 	}
@@ -27,15 +29,15 @@ public class Hospital {
 	public List<Medico> getMedicos() {
 		return medicos;
 	}
-	
-	public Medico getMedico(Medico medico) {
-		return medicos.stream().filter(medicoSearch -> medicoSearch == medico).findFirst().orElse(null);
+
+	public Medico getMedico(Predicate<Pessoa> predicate) {
+		return medicos.stream().filter(predicate).findFirst().orElse(null);
 	}
 
-	public void addMedico(Medico medico) {
+	public void cadastrarMedico(Medico medico) {
 		medicos.add(medico);
 	}
-	
+
 	public void removeMedico(Medico medico) {
 		medicos.remove(medico);
 	}
@@ -43,17 +45,17 @@ public class Hospital {
 	public List<Paciente> getPacientes() {
 		return pacientes;
 	}
-	
-	public Paciente getPaciente(Paciente paciente) {
-		return pacientes.stream().filter(pacienteSearch -> pacienteSearch == paciente).findFirst().orElse(null);
+
+	public Paciente getPaciente(Predicate<Pessoa> predicate) {
+		return pacientes.stream().filter(predicate).findFirst().orElse(null);
 	}
 
-	public void addPaciente(Paciente paciente) {
+	public void cadastrarPaciente(Paciente paciente) {
 		pacientes.add(paciente);
 	}
 
 	public void removePaciente(Paciente paciente) {
 		pacientes.remove(paciente);
 	}
-	
+
 }
