@@ -25,7 +25,7 @@ public class Pessoa {
 	}
 
 	public Pessoa() {
-		this(null, '?', null, null);
+		this(null, '?', null, null, 0);
 	}
 
 	public int getCpf() {

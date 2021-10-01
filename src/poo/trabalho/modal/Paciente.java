@@ -8,14 +8,14 @@ public class Paciente extends Pessoa {
 
 	private List<Laudo> laudos;
 
-	public Paciente(String nome, char sexo, Date dataNascimento, int cpf, FichaMedica fichaMedica) {
-		super(nome, sexo, dataNascimento, cpf);
+	public Paciente(String nome, char sexo, Date dataNascimento, String tipoSanguineo, int cpf, List<Laudo> laudos) {
+		super(nome, sexo, dataNascimento, tipoSanguineo, cpf);
 
 		this.laudos = laudos;
 	}
 
 	public Paciente() {
-		this(null, '?', null, null, null);
+		this(null, '?', null, null, 0, null);
 	}
 
 	public List<Laudo> getLaudos() {

@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Predicate;
 
+import poo.trabalho.controller.Principal;
+
 public class Hospital {
 
 	private String nome;
