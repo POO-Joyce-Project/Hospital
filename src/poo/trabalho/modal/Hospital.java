@@ -52,6 +52,39 @@ public class Hospital {
 		return pacientes.stream().filter(predicate).findFirst().orElse(null);
 	}
 
+	public Paciente consultarPaciente(int id) {
+		
+		for (Paciente paciente : Principal.getHospital().getPacientes()) {
+			if (paciente.getId() == id) {
+				return paciente;
+			}
+		}
+		
+		return null;
+	}
+	
+	public Paciente consultarPaciente(String nome) {
+		
+		for (Paciente paciente : Principal.getHospital().getPacientes()) {
+			if (paciente.getNome() == nome) {
+				return paciente;
+			}
+		}
+		
+		return null;
+	}
+	
+	public Paciente consultarPaciente(FichaMedica fichaMedica) {
+		
+		for (Paciente paciente : Principal.getHospital().getPacientes()) {
+			if (paciente.getFichaMedica() == fichaMedica) {
+				return paciente;
+			}
+		}
+		
+		return null;
+	}
+
 	public void cadastrarPaciente(Paciente paciente) {
 		pacientes.add(paciente);
 	}

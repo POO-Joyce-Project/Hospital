@@ -5,7 +5,9 @@ import java.util.Scanner;
 
 import poo.trabalho.controller.Principal;
 import poo.trabalho.modal.Medico;
+
 import poo.trabalho.view.MedicoView;
+
 
 public class MedicoView {
 
@@ -16,28 +18,29 @@ public class MedicoView {
     	System.out.println("\t\tCadastro de Medico");
     	System.out.println("-------------------------------");
     	
-    	System.out.println("Informe o nome:");
+    	System.out.println("Informe o nome: ");
     	medico.setNome(scanner.nextLine());
     	
-    	System.out.println("Informe a rua do endereco:");
+    	System.out.println("Informe a rua do endereco: ");
     	medico.getEndereco().setRua(scanner.nextLine());
     	
-    	System.out.println("Informe o bairro:");
+    	System.out.println("Informe o bairro: ");
     	medico.getEndereco().setBairro(scanner.nextLine());
     	
-    	System.out.println("Informe o genero");
+    	System.out.println("Informe o genero: ");
     	medico.setSexo(scanner.nextLine().charAt(0));
     	
-    	System.out.println("Informe a data de nascimento");
+    	System.out.println("Informe a data de nascimento: ");
     	//dataNascimento = scanner.nextLine();
     	
     	System.out.println("Informe o CPF:");
     	medico.setCpf(scanner.nextInt());
     	
     	System.out.println("Informe o CRM:");
+
     	medico.setCrm(scanner.nextLine());
     	
-    	System.out.println("Informe a especialidade:");
+    	System.out.println("Informe a especialidade: ");
     	medico.setEspecialidade(scanner.nextLine());
     	
     	System.out.println("-------------------------------");
@@ -118,9 +121,7 @@ public class MedicoView {
 		System.out.println("Data de nascimento: " + medico.getDataNascimento() == null ? "N/A" : medico.getDataNascimento());
 		System.out.println("CRM: " + medico.getCrm());
 		System.out.println("Especialidade: " + medico.getEspecialidade());
-		
 	}
-	
 	
 	public static void printInfoMedico() {
 		List<Medico> medicos = Principal.getHospital().getMedicos();
@@ -128,9 +129,10 @@ public class MedicoView {
 		if (medicos.isEmpty()) {
 			System.out.println("Nenhum medico cadastrado no hospital!");
 		} else {
-			medicos.forEach(paciente -> printInfoMedico(paciente));
+			for (Medico medico : medicos) {
+				printInfoMedico(medico);
+			}
 		}
-	
 	}
 	
 	
