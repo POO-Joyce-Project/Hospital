@@ -4,12 +4,14 @@ import java.util.List;
 import java.util.Scanner;
 
 import poo.trabalho.controller.Principal;
+import poo.trabalho.modal.FichaMedica;
 import poo.trabalho.modal.Paciente;
 
 public class PacienteView {
 
 	public static Paciente printCadastroPaciente(Scanner scanner) {
 		Paciente paciente = new Paciente();
+		char fichaMedica = 'o';
 		
 		System.out.println("-------------------------------");
 		System.out.println(" \t\t Cadastro Paciente");
@@ -30,6 +32,12 @@ public class PacienteView {
 		System.out.println("Informe a data de nascimento: ");
 		//paciente.setDataNascimento(scanner.nextLine());
 		
+		System.out.println("Deseja adicionar uma ficha medica? ");
+		System.out.println("Use 's' para sim e 'n' para nao ");
+		fichaMedica = scanner.nextLine().charAt(0);
+			if(fichaMedica == 's' || fichaMedica =='S') { 
+				FichaMedicaView.printCadastroFichaMedica(scanner);
+			}
 		System.out.println("-------------------------------");
 		
 		return paciente;
@@ -41,7 +49,7 @@ public class PacienteView {
 		System.out.println("Endereco: " + paciente.getEndereco());
 		System.out.println("Genero: " + paciente.getSexo());
 		System.out.println("Data de nascimento: " + paciente.getDataNascimento() == null ? "N/A" : paciente.getDataNascimento());
-		System.out.println("Ficha médica: " + paciente.getFichaMedica() == null ? "N/A" : paciente.getDataNascimento());
+		System.out.println("Ficha mï¿½dica: " + paciente.getFichaMedica() == null ? "N/A" : paciente.getDataNascimento());
 	}
 	
 	public static void printInfoPacientes() {
