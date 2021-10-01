@@ -20,35 +20,37 @@ public class Principal {
     		System.out.println("-------------------------------");
 	    	System.out.println("\t\tHospital");
 	    	System.out.println("1 - Cadastrar Paciente");
-	    	System.out.println("2 - Cadastrar Mï¿½dico");
-	    	System.out.println("3 - Buscar Paciente");
-	    	System.out.println("4 - Buscar Mï¿½dico");
-	    	System.out.println("5 - Imprimir Pacientes");
-	    	System.out.println("6 - Imprimir Mï¿½dicos");
+	    	System.out.println("2 - Cadastrar Medico");
+	    	System.out.println("3 - Consultar Paciente");
+	    	System.out.println("4 - Consultar Medico");
+	    	System.out.println("5 - Listar Pacientes");
+	    	System.out.println("6 - Listar Médicos");
 	    	System.out.println("0 - Sair");
 	    	System.out.println("-------------------------------");
-	    	System.out.print("Escolha uma opï¿½ï¿½o -> ");
+	    	System.out.print("Escolha uma opcao -> ");
 	    	opcao = scanner.nextInt();
 	    	scanner.nextLine();
 
 	        switch(opcao) {
-		        case 1:
-		        	Paciente paciente = PacienteView.printCadastroPaciente(scanner);
+		        case 1: // Cadastrar Paciente
+		        	Paciente cadastroPaciente = PacienteView.printCadastroPaciente(scanner);
 		        	
-		        	hospital.cadastrarPaciente(paciente);
+		        	hospital.cadastrarPaciente(cadastroPaciente);
 		            break;
-		        case 2:
+		        case 2: // Cadastrar Medico
 		        	Medico medico = MedicoView.printMedico(scanner);
 		        	
 		        	hospital.cadastrarMedico(medico);
 		            break;
-		        case 3:
-		        	// Buscar paciente
+		        case 3: // Consultar paciente
+		        	Paciente consultaPaciente = getHospital().consultarPaciente(10);
+		        	
+		        	
 		        	break;
-		        case 4:
-		        	// Buscar mï¿½dico
+		        case 4: // Consultar medico
+		        	
 		        	break;
-		        case 5:
+		        case 5: // Listar Pacientes
 		        	PacienteView.printInfoPacientes();
 		        	
 		        	scanner.nextLine();
@@ -61,8 +63,8 @@ public class Principal {
 		        case 0:
 		        	System.out.println("Tchau!");
 		        	break;
-		        default: 
-		        	System.out.println("Opï¿½ï¿½o invï¿½lida... Tente novamente.");
+		        default:
+		        	System.out.println("Opcao invalida... Tente novamente.");
 		        	
 		        	scanner.nextLine();
 		        	break;

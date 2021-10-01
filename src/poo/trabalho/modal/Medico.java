@@ -15,7 +15,7 @@ public class Medico extends Pessoa {
 		this.especialidade = especialidade;
 	}
 
-	public Medico() { 
+	public Medico() {
 		this(null, null, '?', null, null, null);
 	}
 

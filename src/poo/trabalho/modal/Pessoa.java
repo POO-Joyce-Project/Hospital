@@ -3,6 +3,8 @@ package poo.trabalho.modal;
 import java.util.Date;
 import java.util.Random;
 
+import poo.trabalho.controller.Principal;
+
 public class Pessoa {
 
 	private int id;
@@ -18,10 +20,10 @@ public class Pessoa {
 		this.sexo = sexo;
 		this.dataNascimento = dataNascimento;
 		
-		this.id = new Random().nextInt(1000); // Gerar ID aleatório.
+		this.id = generateId(); // Gerar ID aleatório.
 	}
 
-	public Pessoa() { 
+	public Pessoa() {
 		this(null, null, '?', null);
 	}
 
@@ -61,6 +63,16 @@ public class Pessoa {
 	}
 
 	public int getId() {
+		return id;
+	}
+	
+	private int generateId() {
+		int id = new Random().nextInt(1000);
+		
+		while (Principal.getHospital().consultarPaciente(id) != null) {
+			id = new Random().nextInt(1000);
+		}
+		
 		return id;
 	}
 
