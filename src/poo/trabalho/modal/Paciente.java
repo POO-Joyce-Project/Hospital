@@ -4,18 +4,20 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import poo.trabalho.view.LaudoView;
+
 public class Paciente extends Pessoa {
 
 	private List<Laudo> laudos;
 
-	public Paciente(String nome, char sexo, Date dataNascimento, String tipoSanguineo, int cpf, List<Laudo> laudos) {
-		super(nome, sexo, dataNascimento, tipoSanguineo, cpf);
+	public Paciente(String nome, String cpf, char sexo, Date dataNascimento, String tipoSanguineo, List<Laudo> laudos) {
+		super(nome, cpf, sexo, dataNascimento, tipoSanguineo);
 
 		this.laudos = laudos;
 	}
 
 	public Paciente() {
-		this(null, '?', null, null, 0, null);
+		this(null, null, '?', null, null, null);
 	}
 
 	public List<Laudo> getLaudos() {
@@ -31,8 +33,12 @@ public class Paciente extends Pessoa {
 	
 	@Override
 	public String toString() {
+		StringBuilder sb = new StringBuilder(super.toString());
 		
-		return super.toString();
+		sb.append("Laudos médicos: ");
+		LaudoView.printLaudos(getLaudos());
+		
+		return sb.toString();
 	}
 
 }

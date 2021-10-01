@@ -2,23 +2,21 @@ package poo.trabalho.modal;
 
 import java.util.Date;
 
-import poo.trabalho.controller.Principal;
-
 public class Medico extends Pessoa {
 
 	private String crm;
 	private String especialidade;
 
 	// Inicializadores
-	public Medico(String nome, char sexo, Date dataNascimento, String tipoSanguineo, int cpf, String crm, String especialidade) {
-		super(nome, sexo, dataNascimento, tipoSanguineo, cpf);
+	public Medico(String nome, String cpf, char sexo, Date dataNascimento, String tipoSanguineo, String crm, String especialidade) {
+		super(nome, cpf, sexo, dataNascimento, tipoSanguineo);
 		
 		this.crm = crm;
 		this.especialidade = especialidade;
 	}
 
 	public Medico() {
-		this(null,'?', null, null, 0, null, null);
+		this(null, null, '?', null, null, null, null);
 	}
 
 	// Getters e setters
@@ -36,6 +34,16 @@ public class Medico extends Pessoa {
 
 	public void setEspecialidade(String especialidade) {
 		this.especialidade = especialidade;
+	}
+	
+	@Override
+	public String toString() {
+		StringBuilder sb = new StringBuilder(super.toString());
+		
+		sb.append("CRM: " + getCrm() + "\n");
+		sb.append("Especialidade: " + getEspecialidade() + "\n");
+		
+		return sb.toString();
 	}
 
 }

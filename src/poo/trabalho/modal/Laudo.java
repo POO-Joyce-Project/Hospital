@@ -66,11 +66,11 @@ public class Laudo {
 	public String toString() {
 		StringBuilder sb = new StringBuilder();
 		
-		sb.append("   - Sintomas: " +  getSintomas() + "\n");
-		sb.append("   - Observacao: " +  getObservacao() + "\n");
-		sb.append("   - Medicacao regular: " + getMedicacaoRegular() + "\n");
-		sb.append("   - Diagnostico: " + getDiagnostico() + "\n");
-//		sb.append("   - Medico responsavel: " + getMedicoResponsavel().getNome() + "\n");
+		sb.append("    - Diagnostico: " + getDiagnostico() + "\n");
+		sb.append("    - Sintomas: " +  getSintomas() + "\n");
+		sb.append("    - Medicacao regular: " + getMedicacaoRegular() + "\n");
+		sb.append("    - Observacao: " +  getObservacao() + "\n");
+//		sb.append("    - Medico responsavel: " + getMedicoResponsavel().getNome() + "\n");
 		
 		return sb.toString();
 	}

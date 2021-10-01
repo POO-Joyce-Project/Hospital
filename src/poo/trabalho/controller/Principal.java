@@ -5,6 +5,7 @@ import java.util.Scanner;
 import poo.trabalho.modal.Hospital;
 import poo.trabalho.modal.Medico;
 import poo.trabalho.modal.Paciente;
+import poo.trabalho.view.LaudoView;
 import poo.trabalho.view.MedicoView;
 import poo.trabalho.view.PacienteView;
 
@@ -18,13 +19,14 @@ public class Principal {
     	
     	do {
     		System.out.println("-------------------------------");
-	    	System.out.println("\t\tHospital");
+	    	System.out.println("\tHospital " + hospital.getNome());
 	    	System.out.println("1 - Cadastrar Paciente");
 	    	System.out.println("2 - Cadastrar Medico");
 	    	System.out.println("3 - Consultar Paciente");
 	    	System.out.println("4 - Consultar Medico");
 	    	System.out.println("5 - Listar Pacientes");
 	    	System.out.println("6 - Listar Médicos");
+	    	System.out.println("7 - Registrar laudo medico");
 	    	System.out.println("0 - Sair");
 	    	System.out.println("-------------------------------");
 	    	System.out.print("Escolha uma opcao -> ");
@@ -38,30 +40,31 @@ public class Principal {
 		        	hospital.cadastrarPaciente(cadastroPaciente);
 		            break;
 		        case 2: // Cadastrar Medico
-		        	Medico medico = MedicoView.printMedico(scanner);
+		        	Medico medico = MedicoView.cadastroMedico(scanner);
 		        	
 		        	hospital.cadastrarMedico(medico);
 		            break;
 		        case 3: // Consultar paciente
-		        	Paciente consultaPaciente = getHospital().consultarPaciente(10);
-		        	
-		        	
+		        	PacienteView.consultaPaciente(scanner);
 		        	break;
 		        case 4:
-		        	MedicoView.printConsultaMedico(scanner);
-		        	
-		        	scanner.nextLine();
+		        	MedicoView.consultaMedico(scanner);
 		        	break;
 		        case 5: // Listar Pacientes
-		        	PacienteView.printInfoPacientes();
+		        	PacienteView.infoPacientes();
 		        	
 		        	scanner.nextLine();
 		        	break;
 		        case 6:
-		        	MedicoView.printInfoMedico();
+		        	MedicoView.infoMedicos();
 		        	
 		        	scanner.nextLine();
 		        	break;
+				case 7:
+					LaudoView.printCadastroLaudo(scanner, null);
+					
+					scanner.nextLine();
+					break;
 		        case 0:
 		        	System.out.println("Tchau!");
 		        	break;
