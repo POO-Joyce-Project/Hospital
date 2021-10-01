@@ -6,17 +6,21 @@ public class FichaMedica {
 	private String observacao;
 	private String tipoSanguineo;
 	private String medicacaoRegular;
+	private String sintomas;
 	private float altura;
 	private float peso;
+	private int id;
 
 	// Inicializadores
-	public FichaMedica(String nome, String observacao, String tipoSanguineo, String medicacaoRegular, float altura, float peso) {
+	public FichaMedica(String nome, String observacao, String tipoSanguineo, String medicacaoRegular, float altura, float peso, int id, String sintomas) {
 		this.nome = nome;
 		this.observacao = observacao;
 		this.tipoSanguineo = tipoSanguineo;
 		this.medicacaoRegular = medicacaoRegular;
 		this.altura = altura;
 		this.peso = peso;
+		this.id = id;
+		this.sintomas = sintomas;
 	}
 
 	// Getters e Setters
@@ -66,6 +70,20 @@ public class FichaMedica {
 
 	public void setPeso(Float peso) {
 		this.peso = peso;
+	}
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+	public String getSintomas() {
+		return sintomas;
+	}
+
+	public void setSintomas(String sintomas) {
+		this.sintomas = sintomas;
 	}
 
 }
