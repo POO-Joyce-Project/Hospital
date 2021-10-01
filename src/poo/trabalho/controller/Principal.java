@@ -47,8 +47,10 @@ public class Principal {
 		        	
 		        	
 		        	break;
-		        case 4: // Consultar medico
+		        case 4:
+		        	MedicoView.printConsultaMedico(scanner);
 		        	
+		        	scanner.nextLine();
 		        	break;
 		        case 5: // Listar Pacientes
 		        	PacienteView.printInfoPacientes();

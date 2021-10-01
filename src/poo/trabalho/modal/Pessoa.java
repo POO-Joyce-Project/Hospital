@@ -12,18 +12,28 @@ public class Pessoa {
 	private char sexo;
 	private Date dataNascimento;
 	private String tipoSanguineo;
+	private int cpf;
 
-	public Pessoa(String nome, char sexo, Date dataNascimento, String tipoSanguineo) {
+	public Pessoa(String nome, char sexo, Date dataNascimento, String tipoSanguineo, int cpf) {
 		this.nome = nome;
 		this.sexo = sexo;
 		this.dataNascimento = dataNascimento;
 		this.tipoSanguineo = tipoSanguineo;
+		this.cpf = cpf;
 		
-		this.id = generateId(); // Gerar ID aleatório.
+		this.id = generateId(); // Gerar ID aleatï¿½rio.
 	}
 
 	public Pessoa() {
 		this(null, '?', null, null);
+	}
+
+	public int getCpf() {
+		return cpf;
+	}
+
+	public void setCpf(int cpf) {
+		this.cpf = cpf;
 	}
 
 	public String getNome() {

@@ -73,5 +73,29 @@ public class Hospital {
 	public void removePaciente(Paciente paciente) {
 		pacientes.remove(paciente);
 	}
+	
+	
+	public Medico consultarMedico(int id) {
+		for(Medico medico : Principal.getHospital().getMedicos()){
+			if(medico.getId() == id) {
+				return medico;
+			}
+		}
+		
+		return null;
+	}
+	
+	
+	public Medico consultarMedicoCpf(int cpf) {
+		for(Medico medico : Principal.getHospital().getMedicos()){
+			if(medico.getCpf() == cpf) {
+				return medico;
+			}
+		}
+		
+		return null;
+	}
+	
+	
 
 }

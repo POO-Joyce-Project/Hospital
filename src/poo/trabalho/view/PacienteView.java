@@ -26,6 +26,9 @@ public class PacienteView {
 		System.out.println("Informe a data de nascimento: ");
 		// paciente.setDataNascimento(scanner.nextLine());
 		
+		System.out.println("Informe o CPF:");
+    	paciente.setCpf(scanner.nextInt());
+		
 		System.out.println("Informe o tipo sanguineo:");
 		paciente.setTipoSanguineo(scanner.nextLine());
 
