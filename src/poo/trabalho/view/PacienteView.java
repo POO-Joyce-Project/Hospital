@@ -36,7 +36,7 @@ public class PacienteView {
 		System.out.println("Use 's' para sim e 'n' para nao ");
 		fichaMedica = scanner.nextLine().charAt(0);
 			if(fichaMedica == 's' || fichaMedica =='S') { 
-				FichaMedicaView.printCadastroFichaMedica(scanner);
+				paciente.setFichaMedica(FichaMedicaView.printCadastroFichaMedica(scanner));
 			}
 		System.out.println("-------------------------------");
 		
@@ -49,7 +49,7 @@ public class PacienteView {
 		System.out.println("Endereco: " + paciente.getEndereco());
 		System.out.println("Genero: " + paciente.getSexo());
 		System.out.println("Data de nascimento: " + paciente.getDataNascimento() == null ? "N/A" : paciente.getDataNascimento());
-		System.out.println("Ficha m�dica: " + paciente.getFichaMedica() == null ? "N/A" : paciente.getDataNascimento());
+		FichaMedicaView.printFichaMedica(paciente);
 	}
 	
 	public static void printInfoPacientes() {

@@ -3,6 +3,8 @@ package poo.trabalho.view;
 import java.util.Scanner;
 
 import poo.trabalho.modal.FichaMedica;
+import poo.trabalho.modal.Medico;
+import poo.trabalho.modal.Paciente;
 
 
 public class FichaMedicaView {
@@ -37,6 +39,14 @@ public class FichaMedicaView {
     	
     	return fichaMedica;
 	}
-
+	public static void printFichaMedica(Paciente paciente) {
+		System.out.println("-------------------------------");
+		System.out.println("ID: " + paciente.getFichaMedica().getId());
+		System.out.println("Sintomas: " + paciente.getFichaMedica().getSintomas());
+		System.out.println("Tipo Sanguineo: " + paciente.getFichaMedica().getTipoSanguineo());
+		System.out.println("Altura: " + paciente.getFichaMedica().getAltura());
+		System.out.println("Peso: " + paciente.getFichaMedica().getPeso());
+		System.out.println("Medicacao regular: " + paciente.getFichaMedica().getMedicacaoRegular());
+	}
 
 }
