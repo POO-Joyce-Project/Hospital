@@ -20,14 +20,14 @@ public class Principal {
     		System.out.println("-------------------------------");
 	    	System.out.println("\t\tHospital");
 	    	System.out.println("1 - Cadastrar Paciente");
-	    	System.out.println("2 - Cadastrar Médico");
+	    	System.out.println("2 - Cadastrar Mï¿½dico");
 	    	System.out.println("3 - Buscar Paciente");
-	    	System.out.println("4 - Buscar Médico");
+	    	System.out.println("4 - Buscar Mï¿½dico");
 	    	System.out.println("5 - Imprimir Pacientes");
-	    	System.out.println("6 - Imprimir Médicos");
+	    	System.out.println("6 - Imprimir Mï¿½dicos");
 	    	System.out.println("0 - Sair");
 	    	System.out.println("-------------------------------");
-	    	System.out.print("Escolha uma opção -> ");
+	    	System.out.print("Escolha uma opï¿½ï¿½o -> ");
 	    	opcao = scanner.nextInt();
 	    	scanner.nextLine();
 
@@ -46,7 +46,7 @@ public class Principal {
 		        	// Buscar paciente
 		        	break;
 		        case 4:
-		        	// Buscar médico
+		        	// Buscar mï¿½dico
 		        	break;
 		        case 5:
 		        	PacienteView.printInfoPacientes();
@@ -54,13 +54,15 @@ public class Principal {
 		        	scanner.nextLine();
 		        	break;
 		        case 6:
-		        	// Imprimir médicos
+		        	MedicoView.printInfoMedico();
+		        	
+		        	scanner.nextLine();
 		        	break;
 		        case 0:
 		        	System.out.println("Tchau!");
 		        	break;
 		        default: 
-		        	System.out.println("Opção inválida... Tente novamente.");
+		        	System.out.println("Opï¿½ï¿½o invï¿½lida... Tente novamente.");
 		        	
 		        	scanner.nextLine();
 		        	break;

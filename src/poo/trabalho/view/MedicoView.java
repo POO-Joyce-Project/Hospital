@@ -1,8 +1,11 @@
 package poo.trabalho.view;
 
+import java.util.List;
 import java.util.Scanner;
 
+import poo.trabalho.controller.Principal;
 import poo.trabalho.modal.Medico;
+import poo.trabalho.modal.Paciente;
 
 public class MedicoView {
 
@@ -38,4 +41,29 @@ public class MedicoView {
     	
     	return medico;
 	}
+	
+	public static void printInfoMedico(Medico medico) {
+		System.out.println("ID: " + medico.getId());
+		System.out.println("Nome: " + medico.getNome());
+		System.out.println("Endereco: " + medico.getEndereco());
+		System.out.println("Genero: " + medico.getSexo());
+		System.out.println("Data de nascimento: " + medico.getDataNascimento() == null ? "N/A" : medico.getDataNascimento());
+		System.out.println("CRM: " + medico.getCrm());
+		System.out.println("Especialidade: " + medico.getEspecialidade());
+		
+	}
+	
+	
+	public static void printInfoMedico() {
+		List<Medico> medicos = Principal.getHospital().getMedicos();
+		
+		if (medicos.isEmpty()) {
+			System.out.println("Nenhum medico cadastrado no hospital!");
+		} else {
+			medicos.forEach(paciente -> printInfoMedico(paciente));
+		}
+	
+	}
+	
+	
 }
