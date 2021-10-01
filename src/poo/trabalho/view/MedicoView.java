@@ -18,14 +18,8 @@ public class MedicoView {
     	System.out.println("Informe o nome: ");
     	medico.setNome(scanner.nextLine());
     	
-    	System.out.println("Informe a rua do endereco: ");
-    	medico.getEndereco().setRua(scanner.nextLine());
-    	
-    	System.out.println("Informe o bairro: ");
-    	medico.getEndereco().setBairro(scanner.nextLine());
-    	
     	System.out.println("Informe o genero: ");
-    	medico.setSexo(scanner.nextLine().charAt(0));
+    	medico.setSexo(scanner.nextLine().toUpperCase().charAt(0));
     	
     	System.out.println("Informe a data de nascimento: ");
     	//dataNascimento = scanner.nextLine();
@@ -44,7 +38,6 @@ public class MedicoView {
 	public static void printInfoMedico(Medico medico) {
 		System.out.println("ID: " + medico.getId());
 		System.out.println("Nome: " + medico.getNome());
-		System.out.println("Endereco: " + medico.getEndereco());
 		System.out.println("Genero: " + medico.getSexo());
 		System.out.println("Data de nascimento: " + medico.getDataNascimento() == null ? "N/A" : medico.getDataNascimento());
 		System.out.println("CRM: " + medico.getCrm());

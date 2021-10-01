@@ -8,15 +8,15 @@ public class Medico extends Pessoa {
 	private String especialidade;
 
 	// Inicializadores
-	public Medico(String nome, Endereco endereco, char sexo, Date dataNascimento, String crm, String especialidade) {
-		super(nome, endereco, sexo, dataNascimento);
+	public Medico(String nome, char sexo, Date dataNascimento, String tipoSanguineo, String crm, String especialidade) {
+		super(nome, sexo, dataNascimento, tipoSanguineo);
 		
 		this.crm = crm;
 		this.especialidade = especialidade;
 	}
 
 	public Medico() {
-		this(null, null, '?', null, null, null);
+		this(null,'?', null, null, null, null);
 	}
 
 	// Getters e setters

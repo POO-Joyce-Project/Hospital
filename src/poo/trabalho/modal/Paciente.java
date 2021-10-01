@@ -1,27 +1,38 @@
 package poo.trabalho.modal;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 public class Paciente extends Pessoa {
 
-	private FichaMedica fichaMedica;
+	private List<Laudo> laudos;
 
-	public Paciente(String nome, Endereco endereco, char sexo, Date dataNascimento, FichaMedica fichaMedica) {
-		super(nome, endereco, sexo, dataNascimento);
+	public Paciente(String nome, char sexo, Date dataNascimento, String tipoSanguineo, List<Laudo> laudos) {
+		super(nome, sexo, dataNascimento, tipoSanguineo);
 
-		this.fichaMedica = fichaMedica;
+		this.laudos = laudos;
 	}
 
 	public Paciente() {
-		this(null, null, '?', null, null);
+		this(null, '?', null, null, null);
 	}
 
-	public FichaMedica getFichaMedica() {
-		return fichaMedica;
+	public List<Laudo> getLaudos() {
+		return laudos;
 	}
 
-	public void setFichaMedica(FichaMedica fichaMedica) {
-		this.fichaMedica = fichaMedica;
+	public void adicionarLaudo(Laudo laudo) {
+		if (getLaudos() == null)
+			this.laudos = new ArrayList<>();
+		
+		this.laudos.add(laudo);
+	}
+	
+	@Override
+	public String toString() {
+		
+		return super.toString();
 	}
 
 }

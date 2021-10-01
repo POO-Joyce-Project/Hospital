@@ -9,22 +9,21 @@ public class Pessoa {
 
 	private int id;
 	private String nome;
-	private Endereco endereco;
 	private char sexo;
 	private Date dataNascimento;
+	private String tipoSanguineo;
 
-	public Pessoa(String nome, Endereco endereco, char sexo, Date dataNascimento) {
-		super();
+	public Pessoa(String nome, char sexo, Date dataNascimento, String tipoSanguineo) {
 		this.nome = nome;
-		this.endereco = endereco;
 		this.sexo = sexo;
 		this.dataNascimento = dataNascimento;
+		this.tipoSanguineo = tipoSanguineo;
 		
 		this.id = generateId(); // Gerar ID aleatório.
 	}
 
 	public Pessoa() {
-		this(null, null, '?', null);
+		this(null, '?', null, null);
 	}
 
 	public String getNome() {
@@ -33,17 +32,6 @@ public class Pessoa {
 
 	public void setNome(String nome) {
 		this.nome = nome;
-	}
-
-	public Endereco getEndereco() {
-		if (endereco == null)
-			setEndereco(new Endereco(null, null));
-		
-		return endereco;
-	}
-
-	public void setEndereco(Endereco endereco) {
-		this.endereco = endereco;
 	}
 
 	public char getSexo() {
@@ -74,6 +62,14 @@ public class Pessoa {
 		}
 		
 		return id;
+	}
+
+	public String getTipoSanguineo() {
+		return tipoSanguineo;
+	}
+
+	public void setTipoSanguineo(String tipoSanguineo) {
+		this.tipoSanguineo = tipoSanguineo;
 	}
 
 }

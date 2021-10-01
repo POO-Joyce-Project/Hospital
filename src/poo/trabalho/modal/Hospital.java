@@ -4,28 +4,20 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Predicate;
 
-import poo.trabalho.controller.Principal;
-
 public class Hospital {
 
 	private String nome;
-	private Endereco endereco;
 	private List<Medico> medicos;
 	private List<Paciente> pacientes;
 
 	public Hospital() {
 		this.nome = "Anchieta";
-		this.endereco = new Endereco("Área Especial 8, 9, 10, St. C Norte Qnc", "Brasília-DF");
 		this.medicos = new ArrayList<>();
 		this.pacientes = new ArrayList<>();
 	}
 
 	public String getNome() {
 		return nome;
-	}
-
-	public Endereco getEndereco() {
-		return endereco;
 	}
 
 	public List<Medico> getMedicos() {
@@ -54,7 +46,7 @@ public class Hospital {
 
 	public Paciente consultarPaciente(int id) {
 		
-		for (Paciente paciente : Principal.getHospital().getPacientes()) {
+		for (Paciente paciente : pacientes) {
 			if (paciente.getId() == id) {
 				return paciente;
 			}
@@ -65,19 +57,8 @@ public class Hospital {
 	
 	public Paciente consultarPaciente(String nome) {
 		
-		for (Paciente paciente : Principal.getHospital().getPacientes()) {
+		for (Paciente paciente : pacientes) {
 			if (paciente.getNome() == nome) {
-				return paciente;
-			}
-		}
-		
-		return null;
-	}
-	
-	public Paciente consultarPaciente(FichaMedica fichaMedica) {
-		
-		for (Paciente paciente : Principal.getHospital().getPacientes()) {
-			if (paciente.getFichaMedica() == fichaMedica) {
 				return paciente;
 			}
 		}
