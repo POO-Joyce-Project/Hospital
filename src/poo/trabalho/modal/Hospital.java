@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Predicate;
 
+import poo.trabalho.controller.Principal;
+
 public class Hospital {
 
 	private String nome;
@@ -13,7 +15,7 @@ public class Hospital {
 
 	public Hospital() {
 		this.nome = "Anchieta";
-		this.endereco = new Endereco("Área Especial 8, 9, 10, St. C Norte Qnc", "Brasília-DF");
+		this.endereco = new Endereco("ï¿½rea Especial 8, 9, 10, St. C Norte Qnc", "Brasï¿½lia-DF");
 		this.medicos = new ArrayList<>();
 		this.pacientes = new ArrayList<>();
 	}
@@ -57,5 +59,29 @@ public class Hospital {
 	public void removePaciente(Paciente paciente) {
 		pacientes.remove(paciente);
 	}
+	
+	
+	public Medico consultarMedico(int id) {
+		for(Medico medico : Principal.getHospital().getMedicos()){
+			if(medico.getId() == id) {
+				return medico;
+			}
+		}
+		
+		return null;
+	}
+	
+	
+	public Medico consultarMedicoCpf(int cpf) {
+		for(Medico medico : Principal.getHospital().getMedicos()){
+			if(medico.getCpf() == cpf) {
+				return medico;
+			}
+		}
+		
+		return null;
+	}
+	
+	
 
 }

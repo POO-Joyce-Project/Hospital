@@ -46,7 +46,9 @@ public class Principal {
 		        	// Buscar paciente
 		        	break;
 		        case 4:
-		        	// Buscar m�dico
+		        	MedicoView.printConsultaMedico(scanner);
+		        	
+		        	scanner.nextLine();
 		        	break;
 		        case 5:
 		        	PacienteView.printInfoPacientes();

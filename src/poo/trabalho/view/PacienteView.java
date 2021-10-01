@@ -30,10 +30,17 @@ public class PacienteView {
 		System.out.println("Informe a data de nascimento: ");
 		//paciente.setDataNascimento(scanner.nextLine());
 		
+		System.out.println("Informe o CPF:");
+    	paciente.setCpf(scanner.nextInt());
+    	
+		
 		System.out.println("-------------------------------");
 		
 		return paciente;
 	}
+	
+	
+	
 	
 	public static void printInfoPaciente(Paciente paciente) {
 		System.out.println("ID: " + paciente.getId());
@@ -41,7 +48,7 @@ public class PacienteView {
 		System.out.println("Endereco: " + paciente.getEndereco());
 		System.out.println("Genero: " + paciente.getSexo());
 		System.out.println("Data de nascimento: " + paciente.getDataNascimento() == null ? "N/A" : paciente.getDataNascimento());
-		System.out.println("Ficha médica: " + paciente.getFichaMedica() == null ? "N/A" : paciente.getDataNascimento());
+		System.out.println("Ficha mï¿½dica: " + paciente.getFichaMedica() == null ? "N/A" : paciente.getDataNascimento());
 	}
 	
 	public static void printInfoPacientes() {

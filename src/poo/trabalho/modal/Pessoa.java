@@ -10,19 +10,30 @@ public class Pessoa {
 	private Endereco endereco;
 	private char sexo;
 	private Date dataNascimento;
+	private int cpf;
 
-	public Pessoa(String nome, Endereco endereco, char sexo, Date dataNascimento) {
+	public Pessoa(String nome, Endereco endereco, char sexo, Date dataNascimento, int cpf) {
 		super();
 		this.nome = nome;
 		this.endereco = endereco;
 		this.sexo = sexo;
 		this.dataNascimento = dataNascimento;
+		this.cpf = cpf;
 		
-		this.id = new Random().nextInt(1000); // Gerar ID aleatório.
+		this.id = new Random().nextInt(1000); // Gerar ID aleatï¿½rio.
 	}
 
 	public Pessoa() { 
-		this(null, null, '?', null);
+		this(null, null, '?', null, 0);
+	}
+	
+
+	public int getCpf() {
+		return cpf;
+	}
+
+	public void setCpf(int cpf) {
+		this.cpf = cpf;
 	}
 
 	public String getNome() {

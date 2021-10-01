@@ -6,14 +6,14 @@ public class Paciente extends Pessoa {
 
 	private FichaMedica fichaMedica;
 
-	public Paciente(String nome, Endereco endereco, char sexo, Date dataNascimento, FichaMedica fichaMedica) {
-		super(nome, endereco, sexo, dataNascimento);
+	public Paciente(String nome, Endereco endereco, char sexo, Date dataNascimento, int cpf, FichaMedica fichaMedica) {
+		super(nome, endereco, sexo, dataNascimento, cpf);
 
 		this.fichaMedica = fichaMedica;
 	}
 
 	public Paciente() {
-		this(null, null, '?', null, null);
+		this(null, null, '?', null, 0,  null);
 	}
 
 	public FichaMedica getFichaMedica() {
