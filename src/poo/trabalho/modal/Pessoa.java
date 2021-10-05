@@ -1,5 +1,6 @@
 package poo.trabalho.modal;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 //import poo.trabalho.controller.Principal;
 
@@ -67,10 +68,13 @@ public class Pessoa {
 	public String toString() {
 		StringBuilder sb = new StringBuilder();
 		
+		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+        String dateFormatted = sdf.format(dataNascimento);
+		
 		sb.append("Nome: " + getNome() + "\n");
 		sb.append("CPF: " + getCpf() + "\n");
 		sb.append("Genero: " + getSexo() + "\n");
-		sb.append("Data de nascimento: " + (getDataNascimento() == null ? "N/A" : getDataNascimento())  + "\n");
+		sb.append("Data de nascimento: " + dateFormatted  + "\n");
 		sb.append("Tipo sanguineo: " + getTipoSanguineo() + "\n");
 		
 		return sb.toString();

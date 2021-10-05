@@ -26,6 +26,9 @@ public class Paciente extends Pessoa {
 	}
 
 	public void adicionarLaudo(Laudo laudo) {
+		if (laudo == null)
+			return;
+		
 		if (getLaudos() == null)
 			this.laudos = new ArrayList<>();
 		
@@ -36,7 +39,7 @@ public class Paciente extends Pessoa {
 	public String toString() {
 		StringBuilder sb = new StringBuilder(super.toString());
 		
-		sb.append("Laudos m�dicos: ");
+		sb.append("Laudos medicos: ");
 		LaudoView.printLaudos(getLaudos());
 		
 		return sb.toString();

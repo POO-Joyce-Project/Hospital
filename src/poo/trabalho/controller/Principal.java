@@ -19,13 +19,13 @@ public class Principal {
     	
     	do {
     		System.out.println("-------------------------------");
-	    	System.out.println("\tHospital " + hospital.getNome());
+	    	System.out.println("\tHospital " + hospital.getNome() + "\n");
 	    	System.out.println("1 - Cadastrar Paciente");
 	    	System.out.println("2 - Cadastrar Medico");
 	    	System.out.println("3 - Consultar Paciente");
 	    	System.out.println("4 - Consultar Medico");
 	    	System.out.println("5 - Listar Pacientes");
-	    	System.out.println("6 - Listar M�dicos");
+	    	System.out.println("6 - Listar Medicos");
 	    	System.out.println("7 - Registrar laudo medico");
 	    	System.out.println("0 - Sair");
 	    	System.out.println("-------------------------------");
@@ -61,9 +61,7 @@ public class Principal {
 		        	scanner.nextLine();
 		        	break;
 				case 7:
-					LaudoView.printCadastroLaudo(scanner, null);
-					
-					scanner.nextLine();
+					LaudoView.printCadastroLaudo(scanner);
 					break;
 		        case 0:
 		        	System.out.println("Tchau!");

@@ -3,6 +3,8 @@ package poo.trabalho.modal;
 import java.util.ArrayList;
 import java.util.List;
 
+import poo.trabalho.controller.Principal;
+
 public class Hospital {
 
 	private String nome;
@@ -48,6 +50,21 @@ public class Hospital {
 			}
 		}
 
+		return null;
+	}
+	
+	public Pessoa consultarPessoa(String cpf) {
+		List<Pessoa> pessoas = new ArrayList<>();
+		
+		pessoas.addAll(Principal.getHospital().getMedicos());
+		pessoas.addAll(Principal.getHospital().getPacientes());
+		
+		for (Pessoa pessoa : pessoas) {
+			if (pessoa.getCpf().equalsIgnoreCase(cpf)) {
+				return pessoa;
+			}
+		}
+		
 		return null;
 	}
 

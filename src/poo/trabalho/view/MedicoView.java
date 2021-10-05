@@ -15,90 +15,37 @@ public class MedicoView {
 		Medico medico = new Medico();
 
 		System.out.println("-------------------------------");
-		System.out.println(" \t\t Cadastro Medico");
+		System.out.println("\tCadastro Medico");
 		System.out.println("-------------------------------");
-
-		do {
-			System.out.println("Informe o nome do medico: ");
-			
-			medico.setNome(scanner.nextLine());
-			
-			if (medico.getNome().isEmpty()) {
-				System.out.println("O campo não pode ser vazio... Tente novamente");
-				scanner.nextLine();
-			}
-		} while (medico.getNome().isEmpty());
 		
-		 
-		do {
-			System.out.println("Informe o CPF:");
-		
-			
-			medico.setCpf(scanner.nextLine());
-			
-			if (medico.getCpf().length() != 11) {
-				System.out.println("O CPF tem que ter 11 caracteres... Tente novamente");
-				scanner.nextLine();
-			}
-		} while (medico.getCpf().length() != 11);
+		PessoaView.printCadastroPaciente(scanner, medico);
 		
 		do {
-			System.out.println("Informe o sexo: ");
-		
-			
-			medico.setSexo(scanner.nextLine().toUpperCase().charAt(0));
-			
-			if (medico.getSexo() != 'F' && medico.getSexo() != 'M') {
-				System.out.println("Sexo Inválido... Tente novamente");
-				scanner.nextLine();
-			}
-		} while (medico.getSexo() != 'F' && medico.getSexo() != 'M');
-
-		System.out.println("Informe a data de nascimento: ");
-		// dataNascimento = scanner.nextLine();
-
-		do {
-			System.out.println("Informe o tipo sanguineo:");
-			
-			medico.setTipoSanguineo(scanner.nextLine().toUpperCase());
-			
-			if (medico.getTipoSanguineo().isEmpty()) {
-				System.out.println("O campo não pode ser vazio... Tente novamente");
-				scanner.nextLine();
-			}
-		} while (medico.getTipoSanguineo().isEmpty());
-		
-		
-		do {
-			
-			System.out.println("Informe o CRM:");
-			
+			System.out.print("Informe o CRM: ");
 			medico.setCrm(scanner.nextLine());
 			
 			if (medico.getCrm().isEmpty()) {
-				System.out.println("O campo não pode ser vazio... Tente novamente");
-				scanner.nextLine();
+				System.out.println("O campo nao pode ser vazio... Tente novamente\n");
 			}
 		} while (medico.getCrm().isEmpty());
 		
 		do {
-			
-			System.out.println("Informe a especialidade:");
-			
+			System.out.print("Informe a especialidade: ");
 			medico.setEspecialidade(scanner.nextLine());
 			
 			if (medico.getCrm().isEmpty()) {
-				System.out.println("O campo não pode ser vazio... Tente novamente");
-				scanner.nextLine();
+				System.out.println("O campo nao pode ser vazio... Tente novamente\n");
 			}
 		} while (medico.getCrm().isEmpty());
+		
+		System.out.println("\nMedico cadastrado com sucesso.");
 
 		return medico;
 	}
 
 	public static void consultaMedico(Scanner scanner) {
 		System.out.println("-------------------------------");
-		System.out.println(" \t\t Consulta Medica");
+		System.out.println("\tConsulta Medica");
 		System.out.println("-------------------------------");
 		System.out.println("Digite o CPF/CRM do medico: ");
 		
@@ -116,11 +63,8 @@ public class MedicoView {
 	}
 
 	public static void infoMedico(Medico medico) {
-		System.out.println("Nome: " + medico.getNome());
-		System.out.println("CPF: " + medico.getCpf());
-		System.out.println("Genero: " + medico.getSexo());
-		System.out.println("Data de nascimento: " + medico.getDataNascimento() == null ? "N/A" : medico.getDataNascimento());
-		System.out.println("Tipo sanguineo: " + medico.getTipoSanguineo());
+		PessoaView.infoPessoa(medico);
+		
 		System.out.println("CRM: " + medico.getCrm());
 		System.out.println("Especialidade: " + medico.getEspecialidade());
 	}

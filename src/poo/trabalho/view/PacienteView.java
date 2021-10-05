@@ -10,80 +10,31 @@ public class PacienteView {
 
 	public static Paciente printCadastroPaciente(Scanner scanner) {
 		Paciente paciente = new Paciente();
-
+		
 		char fichaMedica = 'N';
-
+		
 		System.out.println("-------------------------------");
-		System.out.println(" \t\t Cadastro Paciente");
+		System.out.println("\tCadastro Paciente");
 		System.out.println("-------------------------------");
 		
-		do {
-			System.out.println("Informe o nome do paciente: ");
-			
-			paciente.setNome(scanner.nextLine());
-			
-			if (paciente.getNome().isEmpty()) {
-				System.out.println("O campo não pode ser vazio... Tente novamente");
-				scanner.nextLine();
-			}
-		} while (paciente.getNome().isEmpty());
+		PessoaView.printCadastroPaciente(scanner, paciente);
 		
-		
-		 
-		do {
-			System.out.println("Informe o CPF:");
-		
-			
-			paciente.setCpf(scanner.nextLine());
-			
-			if (paciente.getCpf().length() != 11) {
-				System.out.println("O CPF tem que ter 11 caracteres... Tente novamente");
-				scanner.nextLine();
-			}
-		} while (paciente.getCpf().length() != 11);
-		
-
-		do {
-			System.out.println("Informe o sexo: ");
-			
-			
-			paciente.setSexo(scanner.nextLine().toUpperCase().charAt(0));
-			
-			if (paciente.getSexo() != 'F' && paciente.getSexo() != 'M') {
-				System.out.println("Sexo Inválido... Tente novamente");
-				scanner.nextLine();
-			}
-		} while (paciente.getSexo() != 'F' && paciente.getSexo() != 'M');
-
-		System.out.println("Informe a data de nascimento: ");
-		// paciente.setDataNascimento(scanner.nextLine());
-
-		
-		do {
-			System.out.println("Informe o tipo sanguineo:");
-			
-			paciente.setTipoSanguineo(scanner.nextLine().toUpperCase());
-			
-			if (paciente.getTipoSanguineo().isEmpty()) {
-				System.out.println("O campo não pode ser vazio... Tente novamente");
-				scanner.nextLine();
-			}
-		} while (paciente.getTipoSanguineo().isEmpty());
-
 		System.out.println("Deseja adicionar uma ficha medica? ");
 		System.out.println("Use 'S' para sim e 'N' para nao.");
 		fichaMedica = scanner.nextLine().toUpperCase().charAt(0);
-
+		
 		if (fichaMedica == 'S') {
 			paciente.adicionarLaudo(LaudoView.printCadastroLaudo(scanner, paciente));
 		}
-
+		
+		System.out.println("\nPaciente cadastrado com sucesso.");
+		
 		return paciente;
 	}
 
 	public static void consultaPaciente(Scanner scanner) {
 		System.out.println("-------------------------------");
-		System.out.println(" \t\t Consulta Paciente");
+		System.out.println("\tConsulta Paciente");
 		System.out.println("-------------------------------");
 		System.out.println("Digite o CPF do paciente: ");
 
@@ -101,11 +52,8 @@ public class PacienteView {
 	}
 
 	public static void infoPaciente(Paciente paciente) {
-		System.out.println("Nome: " + paciente.getNome());
-		System.out.println("CPF: " + paciente.getCpf());
-		System.out.println("Genero: " + paciente.getSexo());
-		System.out.println("Data de nascimento: " + paciente.getDataNascimento() == null ? "N/A" : paciente.getDataNascimento());
-		System.out.println("Tipo sanguineo: " + paciente.getTipoSanguineo());
+		PessoaView.infoPessoa(paciente);
+		
 		System.out.println("Ficha medica: ");
 		LaudoView.printLaudos(paciente.getLaudos());
 	}

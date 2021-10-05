@@ -25,42 +25,76 @@ public class LaudoView {
 		Medico medico = null;
 		
 		System.out.println("-------------------------------");
-		System.out.println(" \t\t Cadastro Laudo Medico");
+		System.out.println("\tCadastro Laudo Medico");
 		System.out.println("-------------------------------");
 		
 		if (paciente == null) {
-			System.out.println("Informe o CPF do paciente: ");
-			paciente = Principal.getHospital().consultarPaciente(scanner.nextLine());
+			do {
+				System.out.print("Informe o CPF do paciente: ");
+				paciente = Principal.getHospital().consultarPaciente(scanner.nextLine());
+				
+				if (paciente == null) {
+					System.out.println("Paciente nao encontrado... Tente novamente\n");
+				}
+			} while (paciente == null);
 		}
 		
-		System.out.println("Informe o diagnostico: ");
-		laudo.setDiagnostico(scanner.nextLine());
-		
-		System.out.println("Informe os sintomas separados por virgula: ");
-		laudo.setSintomas(scanner.nextLine());
-		
-		System.out.println("Informe a medicacao regular: ");
-		laudo.setMedicacaoRegular(scanner.nextLine());
-		
-		System.out.println("Informe a observacao: ");
-		laudo.setObservacao(scanner.nextLine());
+		do {
+			System.out.print("Informe o diagnostico: ");
+			laudo.setDiagnostico(scanner.nextLine());
+			
+			if (laudo.getDiagnostico().isBlank()) {
+				System.out.println("O campo nao pode ser vazio... Tente novamente\n");
+			}
+		} while (laudo.getDiagnostico().isBlank());
 		
 		do {
-			System.out.println("Informe o CPF/CRM do medico responsavel: ");
+			System.out.print("Informe os sintomas: ");
+			laudo.setSintomas(scanner.nextLine());
 			
+			if (laudo.getSintomas().isBlank()) {
+				System.out.println("O campo nao pode ser vazio... Tente novamente\n");
+			}
+		} while (laudo.getSintomas().isBlank());
+		
+		do {
+			System.out.print("Informe a medicacao regular: ");
+			laudo.setMedicacaoRegular(scanner.nextLine());
+			
+			if (laudo.getMedicacaoRegular().isBlank()) {
+				System.out.println("O campo nao pode ser vazio... Tente novamente\n");
+			}
+		} while (laudo.getMedicacaoRegular().isBlank());
+		
+		do {
+			System.out.print("Informe a observacao: ");
+			laudo.setObservacao(scanner.nextLine());
+			
+			if (laudo.getObservacao().isBlank()) {
+				System.out.println("O campo nao pode ser vazio... Tente novamente\n");
+			}
+		} while (laudo.getObservacao().isBlank());
+		
+		do {
+			System.out.print("Informe o CPF/CRM do medico responsavel: ");
 			medico = Principal.getHospital().consultarMedico(scanner.nextLine());
 			
 			if (medico == null) {
-				System.out.println("Medico nao encontrado... Tente Novamente.");
-				scanner.nextLine();
+				System.out.println("Medico nao encontrado... Tente novamente\n");
 			}
 		} while (medico == null);
 		
 		laudo.setMedicoResponsavel(medico);
 		
 		paciente.adicionarLaudo(laudo);
+		
+		System.out.println("\nLaudo medico registrado com sucesso.");
     	
     	return laudo;
+	}
+	
+	public static Laudo printCadastroLaudo(Scanner scanner) {
+    	return printCadastroLaudo(scanner, null);
 	}
 	
 	public static void printLaudos(List<Laudo> laudos) {
