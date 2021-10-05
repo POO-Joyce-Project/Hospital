@@ -1,6 +1,7 @@
 package poo.trabalho.view;
 
 import java.util.List;
+
 import java.util.Scanner;
 
 import poo.trabalho.controller.Principal;
@@ -17,8 +18,18 @@ public class MedicoView {
 		System.out.println(" \t\t Cadastro Medico");
 		System.out.println("-------------------------------");
 
-		System.out.println("Informe o nome: ");
-		medico.setNome(scanner.nextLine());
+		do {
+			System.out.println("Informe o nome do medico: ");
+			
+			medico.setNome(scanner.nextLine());
+			
+			if (medico.getNome().isEmpty()) {
+				System.out.println("O campo não pode ser vazio... Tente novamente");
+				scanner.nextLine();
+			}
+		} while (medico.getNome().isEmpty());
+		
+		 
 
 		System.out.println("Informe o CPF:");
 		medico.setCpf(scanner.nextLine());
@@ -29,14 +40,44 @@ public class MedicoView {
 		System.out.println("Informe a data de nascimento: ");
 		// dataNascimento = scanner.nextLine();
 
-		System.out.println("Informe o tipo sanguineo:");
-		medico.setTipoSanguineo(scanner.nextLine().toUpperCase());
+		do {
+			System.out.println("Informe o tipo sanguineo:");
+			
+			medico.setTipoSanguineo(scanner.nextLine().toUpperCase());
+			
+			if (medico.getTipoSanguineo().isEmpty()) {
+				System.out.println("O campo não pode ser vazio... Tente novamente");
+				scanner.nextLine();
+			}
+		} while (medico.getTipoSanguineo().isEmpty());
 		
-		System.out.println("Informe o CRM:");
-		medico.setCrm(scanner.nextLine());
+		do {
+			System.out.println("Informe o CRM:");
+			
+			medico.setCrm(scanner.nextLine().toUpperCase());
+			
+			if (medico.getCrm().isEmpty()) {
+				System.out.println("O campo não pode ser vazio... Tente novamente");
+				scanner.nextLine();
+			}
+		} while (medico.getCrm().isEmpty());
 
-		System.out.println("Informe a especialidade: ");
-		medico.setEspecialidade(scanner.nextLine());
+		
+		do {
+			System.out.println("Informe a especialidade:");
+			
+			medico.setEspecialidade(scanner.nextLine().toUpperCase());
+			
+			if (medico.getEspecialidade().isEmpty()) {
+				System.out.println("O campo não pode ser vazio... Tente novamente");
+				scanner.nextLine();
+			}
+		} while (medico.getEspecialidade().isEmpty());
+		
+		
+		
+		
+		
 
 		return medico;
 	}

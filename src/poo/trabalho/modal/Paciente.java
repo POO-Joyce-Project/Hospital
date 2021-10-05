@@ -1,6 +1,7 @@
 package poo.trabalho.modal;
 
 import java.util.ArrayList;
+
 import java.util.Date;
 import java.util.List;
 
@@ -35,7 +36,7 @@ public class Paciente extends Pessoa {
 	public String toString() {
 		StringBuilder sb = new StringBuilder(super.toString());
 		
-		sb.append("Laudos médicos: ");
+		sb.append("Laudos mï¿½dicos: ");
 		LaudoView.printLaudos(getLaudos());
 		
 		return sb.toString();

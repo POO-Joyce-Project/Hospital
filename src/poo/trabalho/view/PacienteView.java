@@ -16,21 +16,49 @@ public class PacienteView {
 		System.out.println("-------------------------------");
 		System.out.println(" \t\t Cadastro Paciente");
 		System.out.println("-------------------------------");
-
-		System.out.println("Informe o nome do paciente: ");
-		paciente.setNome(scanner.nextLine());
-
+		
+		do {
+			System.out.println("Informe o nome do paciente: ");
+			
+			paciente.setNome(scanner.nextLine());
+			
+			if (paciente.getNome().isEmpty()) {
+				System.out.println("O campo não pode ser vazio... Tente novamente");
+				scanner.nextLine();
+			}
+		} while (paciente.getNome().isEmpty());
+		
+		
 		System.out.println("Informe o CPF:");
 		paciente.setCpf(scanner.nextLine());
 
-		System.out.println("Informe o sexo: ");
-		paciente.setSexo(scanner.nextLine().toUpperCase().charAt(0));
+//		do {
+//			System.out.println("Informe o sexo:");
+//	
+//			paciente.setSexo(scanner.nextLine().toUpperCase().charAt(0));
+//			System.out.println("O campo não pode ser vazio... Tente novamente");
+//			
+//			if (paciente.getSexo()) {
+//				System.out.println("O campo não pode ser vazio... Tente novamente");
+//				scanner.nextLine();
+//			}
+//		} while (paciente.getSexo() == ' ');
+//		
 
 		System.out.println("Informe a data de nascimento: ");
 		// paciente.setDataNascimento(scanner.nextLine());
 
-		System.out.println("Informe o tipo sanguineo:");
-		paciente.setTipoSanguineo(scanner.nextLine().toUpperCase());
+		
+		do {
+			System.out.println("Informe o tipo sanguineo:");
+			
+			paciente.setTipoSanguineo(scanner.nextLine().toUpperCase());
+			
+			if (paciente.getTipoSanguineo().isEmpty()) {
+				System.out.println("O campo não pode ser vazio... Tente novamente");
+				scanner.nextLine();
+			}
+		} while (paciente.getTipoSanguineo().isEmpty());
 
 		System.out.println("Deseja adicionar uma ficha medica? ");
 		System.out.println("Use 'S' para sim e 'N' para nao.");

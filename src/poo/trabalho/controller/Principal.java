@@ -25,7 +25,7 @@ public class Principal {
 	    	System.out.println("3 - Consultar Paciente");
 	    	System.out.println("4 - Consultar Medico");
 	    	System.out.println("5 - Listar Pacientes");
-	    	System.out.println("6 - Listar Médicos");
+	    	System.out.println("6 - Listar Mï¿½dicos");
 	    	System.out.println("7 - Registrar laudo medico");
 	    	System.out.println("0 - Sair");
 	    	System.out.println("-------------------------------");
@@ -82,5 +82,11 @@ public class Principal {
 	public static Hospital getHospital() {
 		return hospital;
 	}
+	
+	public static String validaNome( String nome){
+		
+		return nome;
+	}
+	
 
 }
