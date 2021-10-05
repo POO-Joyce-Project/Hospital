@@ -52,6 +52,10 @@ public class Hospital {
 
 		return null;
 	}
+
+	public void cadastrarPaciente(Paciente paciente) {
+		pacientes.add(paciente);
+	}
 	
 	public Pessoa consultarPessoa(String cpf) {
 		List<Pessoa> pessoas = new ArrayList<>();
@@ -66,10 +70,6 @@ public class Hospital {
 		}
 		
 		return null;
-	}
-
-	public void cadastrarPaciente(Paciente paciente) {
-		pacientes.add(paciente);
 	}
 
 }

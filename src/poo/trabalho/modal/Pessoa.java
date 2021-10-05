@@ -4,7 +4,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 //import poo.trabalho.controller.Principal;
 
-public class Pessoa {
+public abstract class Pessoa {
 
 	private String nome;
 	private String cpf;
