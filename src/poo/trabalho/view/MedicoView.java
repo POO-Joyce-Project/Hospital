@@ -30,12 +30,29 @@ public class MedicoView {
 		} while (medico.getNome().isEmpty());
 		
 		 
-
-		System.out.println("Informe o CPF:");
-		medico.setCpf(scanner.nextLine());
-
-		System.out.println("Informe o sexo: ");
-		medico.setSexo(scanner.nextLine().toUpperCase().charAt(0));
+		do {
+			System.out.println("Informe o CPF:");
+		
+			
+			medico.setCpf(scanner.nextLine());
+			
+			if (medico.getCpf().length() != 11) {
+				System.out.println("O CPF tem que ter 11 caracteres... Tente novamente");
+				scanner.nextLine();
+			}
+		} while (medico.getCpf().length() != 11);
+		
+		do {
+			System.out.println("Informe o sexo: ");
+		
+			
+			medico.setSexo(scanner.nextLine().toUpperCase().charAt(0));
+			
+			if (medico.getSexo() != 'F' && medico.getSexo() != 'M') {
+				System.out.println("Sexo Inválido... Tente novamente");
+				scanner.nextLine();
+			}
+		} while (medico.getSexo() != 'F' && medico.getSexo() != 'M');
 
 		System.out.println("Informe a data de nascimento: ");
 		// dataNascimento = scanner.nextLine();
@@ -51,33 +68,30 @@ public class MedicoView {
 			}
 		} while (medico.getTipoSanguineo().isEmpty());
 		
+		
 		do {
+			
 			System.out.println("Informe o CRM:");
 			
-			medico.setCrm(scanner.nextLine().toUpperCase());
+			medico.setCrm(scanner.nextLine());
 			
 			if (medico.getCrm().isEmpty()) {
 				System.out.println("O campo não pode ser vazio... Tente novamente");
 				scanner.nextLine();
 			}
 		} while (medico.getCrm().isEmpty());
-
 		
 		do {
+			
 			System.out.println("Informe a especialidade:");
 			
-			medico.setEspecialidade(scanner.nextLine().toUpperCase());
+			medico.setEspecialidade(scanner.nextLine());
 			
-			if (medico.getEspecialidade().isEmpty()) {
+			if (medico.getCrm().isEmpty()) {
 				System.out.println("O campo não pode ser vazio... Tente novamente");
 				scanner.nextLine();
 			}
-		} while (medico.getEspecialidade().isEmpty());
-		
-		
-		
-		
-		
+		} while (medico.getCrm().isEmpty());
 
 		return medico;
 	}

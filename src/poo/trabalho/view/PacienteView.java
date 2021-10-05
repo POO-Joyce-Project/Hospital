@@ -29,21 +29,31 @@ public class PacienteView {
 		} while (paciente.getNome().isEmpty());
 		
 		
-		System.out.println("Informe o CPF:");
-		paciente.setCpf(scanner.nextLine());
+		 
+		do {
+			System.out.println("Informe o CPF:");
+		
+			
+			paciente.setCpf(scanner.nextLine());
+			
+			if (paciente.getCpf().length() != 11) {
+				System.out.println("O CPF tem que ter 11 caracteres... Tente novamente");
+				scanner.nextLine();
+			}
+		} while (paciente.getCpf().length() != 11);
+		
 
-//		do {
-//			System.out.println("Informe o sexo:");
-//	
-//			paciente.setSexo(scanner.nextLine().toUpperCase().charAt(0));
-//			System.out.println("O campo não pode ser vazio... Tente novamente");
-//			
-//			if (paciente.getSexo()) {
-//				System.out.println("O campo não pode ser vazio... Tente novamente");
-//				scanner.nextLine();
-//			}
-//		} while (paciente.getSexo() == ' ');
-//		
+		do {
+			System.out.println("Informe o sexo: ");
+			
+			
+			paciente.setSexo(scanner.nextLine().toUpperCase().charAt(0));
+			
+			if (paciente.getSexo() != 'F' && paciente.getSexo() != 'M') {
+				System.out.println("Sexo Inválido... Tente novamente");
+				scanner.nextLine();
+			}
+		} while (paciente.getSexo() != 'F' && paciente.getSexo() != 'M');
 
 		System.out.println("Informe a data de nascimento: ");
 		// paciente.setDataNascimento(scanner.nextLine());
