@@ -1,9 +1,9 @@
 package poo.trabalho.view;
 
-
 import java.util.List;
 import java.util.Scanner;
 
+import poo.trabalho.controller.HospitalController;
 import poo.trabalho.controller.Principal;
 import poo.trabalho.modal.Laudo;
 import poo.trabalho.modal.Medico;
@@ -11,12 +11,14 @@ import poo.trabalho.modal.Paciente;
 
 public class LaudoView {
 	
-	public static Laudo printCadastroLaudo(Scanner scanner, Paciente paciente) {
-		if (Principal.getHospital().getMedicos().isEmpty()) {
+	public static Laudo cadastroLaudo(Scanner scanner, Paciente paciente) {
+		HospitalController hospitalController = Principal.getHospitalController();
+		
+		if (hospitalController.getHospital().getMedicos().isEmpty()) {
 			System.out.println("Nenhum medico cadastrado no hospital!");
 			return null;
 		}
-		if (Principal.getHospital().getPacientes().isEmpty() && paciente == null) {
+		if (hospitalController.getHospital().getPacientes().isEmpty() && paciente == null) {
 			System.out.println("Nenhum paciente cadastrado no hospital!");
 			return null;
 		}
@@ -31,7 +33,7 @@ public class LaudoView {
 		if (paciente == null) {
 			do {
 				System.out.print("Informe o CPF do paciente: ");
-				paciente = Principal.getHospital().consultarPaciente(scanner.nextLine());
+				paciente = hospitalController.consultarPaciente(scanner.nextLine());
 				
 				if (paciente == null) {
 					System.out.println("Paciente nao encontrado... Tente novamente\n");
@@ -77,7 +79,7 @@ public class LaudoView {
 		
 		do {
 			System.out.print("Informe o CPF/CRM do medico responsavel: ");
-			medico = Principal.getHospital().consultarMedico(scanner.nextLine());
+			medico = hospitalController.consultarMedico(scanner.nextLine());
 			
 			if (medico == null) {
 				System.out.println("Medico nao encontrado... Tente novamente\n");
@@ -93,11 +95,11 @@ public class LaudoView {
     	return laudo;
 	}
 	
-	public static Laudo printCadastroLaudo(Scanner scanner) {
-    	return printCadastroLaudo(scanner, null);
+	public static Laudo cadastroLaudo(Scanner scanner) {
+    	return cadastroLaudo(scanner, null);
 	}
 	
-	public static void printLaudos(List<Laudo> laudos) {
+	public static void listarLaudos(List<Laudo> laudos) {
 		
 		if (laudos == null) {
 			System.out.println("N/A");

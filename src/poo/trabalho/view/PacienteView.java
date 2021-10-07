@@ -4,11 +4,12 @@ import java.util.List;
 import java.util.Scanner;
 
 import poo.trabalho.controller.Principal;
+import poo.trabalho.modal.Laudo;
 import poo.trabalho.modal.Paciente;
 
 public class PacienteView {
 
-	public static Paciente printCadastroPaciente(Scanner scanner) {
+	public static Paciente cadastroPaciente(Scanner scanner) {
 		Paciente paciente = new Paciente();
 		
 		char fichaMedica = 'N';
@@ -17,17 +18,19 @@ public class PacienteView {
 		System.out.println("\tCadastro Paciente");
 		System.out.println("-------------------------------");
 		
-		PessoaView.printCadastroPaciente(scanner, paciente);
+		PessoaView.cadastroPessoa(scanner, paciente);
 		
 		System.out.println("Deseja adicionar uma ficha medica? ");
 		System.out.println("Use 'S' para sim e 'N' para nao.");
 		fichaMedica = scanner.nextLine().toUpperCase().charAt(0);
 		
 		if (fichaMedica == 'S') {
-			paciente.adicionarLaudo(LaudoView.printCadastroLaudo(scanner, paciente));
+			Laudo laudo = LaudoView.cadastroLaudo(scanner, paciente);
+			
+			paciente.adicionarLaudo(laudo);
+		} else {
+			System.out.println("\nPaciente cadastrado com sucesso.");	
 		}
-		
-		System.out.println("\nPaciente cadastrado com sucesso.");
 		
 		return paciente;
 	}
@@ -38,7 +41,7 @@ public class PacienteView {
 		System.out.println("-------------------------------");
 		System.out.println("Digite o CPF do paciente: ");
 
-		Paciente paciente = Principal.getHospital().consultarPaciente(scanner.nextLine());
+		Paciente paciente = Principal.getHospitalController().consultarPaciente(scanner.nextLine());
 
 		System.out.println("-------------------------------");
 		
@@ -55,11 +58,11 @@ public class PacienteView {
 		PessoaView.infoPessoa(paciente);
 		
 		System.out.println("Ficha medica: ");
-		LaudoView.printLaudos(paciente.getLaudos());
+		LaudoView.listarLaudos(paciente.getLaudos());
 	}
 
 	public static void infoPacientes() {
-		List<Paciente> pacientes = Principal.getHospital().getPacientes();
+		List<Paciente> pacientes = Principal.getHospitalController().getHospital().getPacientes();
 
 		if (pacientes.isEmpty()) {
 			System.out.println("Nenhum paciente cadastrado no hospital!");

@@ -12,7 +12,7 @@ import poo.trabalho.modal.Pessoa;
 
 public class PessoaView {
 
-	public static Pessoa printCadastroPaciente(Scanner scanner, Pessoa pessoa) {
+	public static Pessoa cadastroPessoa(Scanner scanner, Pessoa pessoa) {
 		do {
 			System.out.print("Informe o nome: ");
 			pessoa.setNome(scanner.nextLine());
@@ -78,25 +78,6 @@ public class PessoaView {
 		return pessoa;
 	}
 
-	public static void consultaPaciente(Scanner scanner) {
-		System.out.println("-------------------------------");
-		System.out.println("\tConsulta");
-		System.out.println("-------------------------------");
-		System.out.println("Digite o CPF: ");
-		
-		Pessoa pessoa = Principal.getHospital().consultarPessoa(scanner.nextLine());
-		
-		System.out.println("-------------------------------");
-		
-		if (pessoa != null) {
-			infoPessoa(pessoa);
-		} else {
-			System.out.println("Individuo nao encontrado... Tente novamente.");
-		}
-		
-		scanner.nextLine();
-	}
-
 	public static void infoPessoa(Pessoa pessoa) {
 		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
         String dateFormatted = sdf.format(pessoa.getDataNascimento());
@@ -112,8 +93,8 @@ public class PessoaView {
 	public static void infoPessoas() {
 		List<Pessoa> pessoas = new ArrayList<>();
 		
-		pessoas.addAll(Principal.getHospital().getMedicos());
-		pessoas.addAll(Principal.getHospital().getPacientes());
+		pessoas.addAll(Principal.getHospitalController().getHospital().getMedicos());
+		pessoas.addAll(Principal.getHospitalController().getHospital().getPacientes());
 		
 		if (pessoas.isEmpty()) {
 			System.out.println("Nenhum individuo cadastrado no hospital!");

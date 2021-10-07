@@ -2,7 +2,6 @@ package poo.trabalho.modal;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
-//import poo.trabalho.controller.Principal;
 
 public abstract class Pessoa {
 
