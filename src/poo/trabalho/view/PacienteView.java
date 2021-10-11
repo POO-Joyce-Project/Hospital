@@ -57,8 +57,10 @@ public class PacienteView {
 	public static void infoPaciente(Paciente paciente) {
 		PessoaView.infoPessoa(paciente);
 		
-		System.out.println("Ficha medica: ");
-		LaudoView.listarLaudos(paciente.getLaudos());
+		if (!paciente.getLaudos().isEmpty()) {		
+			System.out.println("Ficha medica: ");
+			LaudoView.listarLaudos(paciente.getLaudos());
+		}
 	}
 
 	public static void infoPacientes() {
