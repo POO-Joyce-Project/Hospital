@@ -70,7 +70,7 @@ public class Laudo {
 		sb.append("    - Sintomas: " +  getSintomas() + "\n");
 		sb.append("    - Medicacao regular: " + getMedicacaoRegular() + "\n");
 		sb.append("    - Observacao: " +  getObservacao() + "\n");
-//		sb.append("    - Medico responsavel: " + getMedicoResponsavel().getNome() + "\n");
+		sb.append("    - Medico responsavel: " + getMedicoResponsavel().getNome() + "\n");
 		
 		return sb.toString();
 	}

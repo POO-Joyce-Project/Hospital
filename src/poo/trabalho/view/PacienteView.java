@@ -11,27 +11,27 @@ public class PacienteView {
 
 	public static Paciente cadastroPaciente(Scanner scanner) {
 		Paciente paciente = new Paciente();
-		
+
 		char fichaMedica = 'N';
-		
+
 		System.out.println("-------------------------------");
 		System.out.println("\tCadastro Paciente");
 		System.out.println("-------------------------------");
-		
+
 		PessoaView.cadastroPessoa(scanner, paciente);
-		
+
 		System.out.println("Deseja adicionar uma ficha medica? ");
 		System.out.println("Use 'S' para sim e 'N' para nao.");
 		fichaMedica = scanner.nextLine().toUpperCase().charAt(0);
-		
+
 		if (fichaMedica == 'S') {
 			Laudo laudo = LaudoView.cadastroLaudo(scanner, paciente);
-			
+
 			paciente.adicionarLaudo(laudo);
 		} else {
-			System.out.println("\nPaciente cadastrado com sucesso.");	
+			System.out.println("\nPaciente cadastrado com sucesso.");
 		}
-		
+
 		return paciente;
 	}
 
@@ -44,22 +44,22 @@ public class PacienteView {
 		Paciente paciente = Principal.getHospitalController().consultarPaciente(scanner.nextLine());
 
 		System.out.println("-------------------------------");
-		
+
 		if (paciente != null) {
 			infoPaciente(paciente);
 		} else {
 			System.out.println("Paciente nao encontrado... Tente novamente.");
 		}
-		
+
 		scanner.nextLine();
 	}
 
 	public static void infoPaciente(Paciente paciente) {
 		PessoaView.infoPessoa(paciente);
-		
-		if (!paciente.getLaudos().isEmpty()) {		
+
+		if (paciente.getLaudos() != null && !paciente.getLaudos().isEmpty()) {
 			System.out.println("Ficha medica: ");
-			LaudoView.listarLaudos(paciente.getLaudos());
+			LaudoView.infoLaudos(paciente.getLaudos());
 		}
 	}
 

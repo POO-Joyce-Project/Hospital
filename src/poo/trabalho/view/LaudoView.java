@@ -99,17 +99,24 @@ public class LaudoView {
     	return cadastroLaudo(scanner, null);
 	}
 	
-	public static void listarLaudos(List<Laudo> laudos) {
+	public static void infoLaudo(Laudo laudo) {
+		System.out.println("    - Diagnostico: " + laudo.getDiagnostico());
+		System.out.println("    - Sintomas: " +  laudo.getSintomas());
+		System.out.println("    - Medicacao regular: " + laudo.getMedicacaoRegular());
+		System.out.println("    - Observacao: " +  laudo.getObservacao());
+		System.out.println("    - Medico responsavel: " + laudo.getMedicoResponsavel().getNome());
+	}
+	
+	public static void infoLaudos(List<Laudo> laudos) {
 		
-		if (laudos == null) {
+		if (laudos == null || laudos.isEmpty()) {
 			System.out.println("N/A");
 		} else {
 			int count = 1;
 			
 			for (Laudo laudo : laudos) {
 				System.out.println("  Laudo " + count + ":");
-				System.out.println(laudo);
-				System.out.println("");
+				infoLaudo(laudo);
 				
 				count++;
 			}

@@ -39,8 +39,8 @@ public class Paciente extends Pessoa {
 	public String toString() {
 		StringBuilder sb = new StringBuilder(super.toString());
 		
-		sb.append("Laudos medicos: ");
-		LaudoView.listarLaudos(getLaudos());
+		sb.append("Ficha medica: ");
+		LaudoView.infoLaudos(getLaudos());
 		
 		return sb.toString();
 	}
