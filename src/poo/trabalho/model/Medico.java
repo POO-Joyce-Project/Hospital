@@ -1,4 +1,4 @@
-package poo.trabalho.modal;
+package poo.trabalho.model;
 
 import java.util.Date;
 

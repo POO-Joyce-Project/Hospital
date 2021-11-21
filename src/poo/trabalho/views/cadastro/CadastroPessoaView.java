@@ -1,11 +1,11 @@
-package poo.trabalho.view;
+package poo.trabalho.views.cadastro;
 
 import javax.swing.JPanel;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 import javax.swing.text.MaskFormatter;
 
-import poo.trabalho.interfaces.ICadastroController;
+import poo.trabalho.views.hospital.HospitalView;
 
 import java.text.ParseException;
 
@@ -46,7 +46,7 @@ public abstract class CadastroPessoaView extends JPanel implements DocumentListe
 		setupLimparButton();
 		
 		setLayout(null);
-		setBounds(0, 0, PrincipalView.WIDTH, PrincipalView.HEIGHT);
+		setBounds(0, 0, HospitalView.WIDTH, HospitalView.HEIGHT);
 	}
 	
 	private void setupTitle(String title) {

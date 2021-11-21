@@ -1,4 +1,4 @@
-package poo.trabalho.modal;
+package poo.trabalho.model;
 
 public class Laudo {
 

@@ -1,15 +1,14 @@
-package poo.trabalho.controller;
+package poo.trabalho.views.cadastro.medico;
 
 import javax.swing.JOptionPane;
 
-import poo.trabalho.interfaces.ICadastroController;
-import poo.trabalho.view.CadastroPacienteView;
+import poo.trabalho.views.cadastro.ICadastroController;
 
-public class CadastroPacienteController implements ICadastroController {
+public class CadastroMedicoController implements ICadastroController {
 
-	private CadastroPacienteView view;
+	private CadastroMedicoView view;
 
-	public CadastroPacienteController(CadastroPacienteView view) {
+	public CadastroMedicoController(CadastroMedicoView view) {
 		this.view = view;
 	}
 
@@ -30,6 +29,8 @@ public class CadastroPacienteController implements ICadastroController {
 		view.getSexoComboBox().setSelectedIndex(0);
 		view.getNascimentoTextField().setValue(null);
 		view.getSanguineoTextField().setText("");
+		view.getEspecialidadeTextField().setText("");
+		view.getCrmTextField().setText("");
 	}
 
 	@Override
@@ -37,7 +38,8 @@ public class CadastroPacienteController implements ICadastroController {
 		return view.getNomeTextField().getText().isBlank()
 				|| view.getCpfTextField().getText().replace("_", "").replace(".", "").replace("-", "").isBlank()
 				|| view.getNascimentoTextField().getText().replace("_", "").replace("/", "").isBlank()
-				|| view.getSanguineoTextField().getText().isBlank();
+				|| view.getSanguineoTextField().getText().isBlank()
+				|| view.getEspecialidadeTextField().getText().isBlank() || view.getCrmTextField().getText().isBlank();
 	}
 
 }

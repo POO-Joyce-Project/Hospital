@@ -1,13 +1,19 @@
-package poo.trabalho.view;
+package poo.trabalho.views.hospital;
 
 import java.awt.BorderLayout;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import poo.trabalho.views.cadastro.medico.CadastroMedicoView;
+import poo.trabalho.views.cadastro.paciente.CadastroPacienteView;
+import poo.trabalho.views.consulta.medico.ConsultaMedicoView;
+import poo.trabalho.views.consulta.paciente.ConsultaPacienteView;
+
 import javax.swing.JTabbedPane;
 
-public class PrincipalView extends JFrame {
+public class HospitalView extends JFrame {
 	
 	private static final long serialVersionUID = 95876338498256068L;
 	
@@ -16,7 +22,7 @@ public class PrincipalView extends JFrame {
 	
 	private JPanel contentPane;
 	
-	public PrincipalView() {
+	public HospitalView() {
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		contentPane.setLayout(new BorderLayout(0, 0));

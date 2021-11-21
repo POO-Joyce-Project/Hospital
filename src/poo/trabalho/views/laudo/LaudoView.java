@@ -1,13 +1,13 @@
-package poo.trabalho.view;
+package poo.trabalho.views.laudo;
 
 import java.util.List;
 import java.util.Scanner;
 
-import poo.trabalho.controller.HospitalController;
-import poo.trabalho.controller.Principal;
-import poo.trabalho.modal.Laudo;
-import poo.trabalho.modal.Medico;
-import poo.trabalho.modal.Paciente;
+import poo.trabalho.Principal;
+import poo.trabalho.model.Laudo;
+import poo.trabalho.model.Medico;
+import poo.trabalho.model.Paciente;
+import poo.trabalho.views.hospital.HospitalController;
 
 public class LaudoView {
 	

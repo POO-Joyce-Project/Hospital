@@ -1,24 +1,19 @@
-package poo.trabalho.controller;
+package poo.trabalho;
 
 import java.awt.EventQueue;
 
-import poo.trabalho.view.PrincipalView;
+import poo.trabalho.views.hospital.HospitalController;
+import poo.trabalho.views.hospital.HospitalView;
 
 public class Principal {
 
 	private static HospitalController hospitalController = new HospitalController();
 
 	public static void main(String[] args) {
-//		Scanner scanner = new Scanner(System.in);
-//
-//		HospitalView.menu(scanner);
-//		
-//		scanner.close();
-		
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					PrincipalView frame = new PrincipalView();
+					HospitalView frame = new HospitalView();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();

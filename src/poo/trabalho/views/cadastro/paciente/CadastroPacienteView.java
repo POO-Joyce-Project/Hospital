@@ -1,6 +1,6 @@
-package poo.trabalho.view;
+package poo.trabalho.views.cadastro.paciente;
 
-import poo.trabalho.controller.CadastroPacienteController;
+import poo.trabalho.views.cadastro.CadastroPessoaView;
 
 public class CadastroPacienteView extends CadastroPessoaView {
 	

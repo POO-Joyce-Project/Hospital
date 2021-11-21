@@ -1,11 +1,10 @@
-package poo.trabalho.controller;
+package poo.trabalho.views.hospital;
 
-import poo.trabalho.interfaces.HospitalInterface;
-import poo.trabalho.modal.Hospital;
-import poo.trabalho.modal.Medico;
-import poo.trabalho.modal.Paciente;
+import poo.trabalho.model.Hospital;
+import poo.trabalho.model.Medico;
+import poo.trabalho.model.Paciente;
 
-public class HospitalController implements HospitalInterface {
+public class HospitalController implements IHospitalController {
 
 	private Hospital hospital;
 

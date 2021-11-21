@@ -1,11 +1,11 @@
-package poo.trabalho.modal;
+package poo.trabalho.model;
 
 import java.util.ArrayList;
 
 import java.util.Date;
 import java.util.List;
 
-import poo.trabalho.view.LaudoView;
+import poo.trabalho.views.laudo.LaudoView;
 
 public class Paciente extends Pessoa {
 

@@ -1,9 +1,9 @@
-package poo.trabalho.view;
+package poo.trabalho.views.cadastro.medico;
 
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 
-import poo.trabalho.controller.CadastroMedicoController;
+import poo.trabalho.views.cadastro.CadastroPessoaView;
 
 import java.awt.Font;
 

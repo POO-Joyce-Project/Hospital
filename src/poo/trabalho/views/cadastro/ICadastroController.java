@@ -1,4 +1,4 @@
-package poo.trabalho.interfaces;
+package poo.trabalho.views.cadastro;
 
 public interface ICadastroController {
 	

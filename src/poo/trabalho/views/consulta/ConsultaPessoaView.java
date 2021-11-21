@@ -1,4 +1,4 @@
-package poo.trabalho.view;
+package poo.trabalho.views.consulta;
 
 import javax.swing.JPanel;
 import javax.swing.text.MaskFormatter;
@@ -12,7 +12,7 @@ import javax.swing.JScrollPane;
 import javax.swing.JButton;
 import java.awt.Font;
 
-public class ConsultaPessoaView extends JPanel {
+public abstract class ConsultaPessoaView extends JPanel {
 	
 	private static final long serialVersionUID = 942926819272191419L;
 	
