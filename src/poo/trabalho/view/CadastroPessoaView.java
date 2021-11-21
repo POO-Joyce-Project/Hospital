@@ -5,6 +5,8 @@ import javax.swing.JLabel;
 import javax.swing.JTextField;
 import javax.swing.text.MaskFormatter;
 
+import poo.trabalho.interfaces.ICadastroController;
+
 import java.text.ParseException;
 
 import javax.swing.JComboBox;
@@ -13,18 +15,25 @@ import javax.swing.DefaultComboBoxModel;
 import javax.swing.JButton;
 import java.awt.Font;
 import javax.swing.SwingConstants;
+import javax.swing.event.DocumentEvent;
+import javax.swing.event.DocumentListener;
 
-public class CadastroPessoaView extends JPanel {
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+
+public abstract class CadastroPessoaView extends JPanel implements DocumentListener {
 	
 	private static final long serialVersionUID = -6296201519154331596L;
 	
-	private JTextField nomeTextField;
-	private JFormattedTextField cpfTextField;
-	private JComboBox<String> sexoComboBox;
-	private JFormattedTextField nascimentoTextField;
-	private JTextField sanguineoTextField;
-	private JButton cadastrarButton;
-	private JButton limparButton;
+	protected JTextField nomeTextField;
+	protected JFormattedTextField cpfTextField;
+	protected JComboBox<String> sexoComboBox;
+	protected JFormattedTextField nascimentoTextField;
+	protected JTextField sanguineoTextField;
+	protected JButton cadastrarButton;
+	protected JButton limparButton;
+	
+	protected ICadastroController controller;
 	
 	public CadastroPessoaView(String title) {
 		setupTitle(title);
@@ -59,6 +68,8 @@ public class CadastroPessoaView extends JPanel {
 		nomeTextField = new JTextField();
 		nomeTextField.setBounds(66, 60, 311, 20);
 		nomeTextField.setColumns(10);
+		nomeTextField.getDocument().addDocumentListener(this);
+		
 		add(nomeTextField);
 	}
 	
@@ -74,6 +85,7 @@ public class CadastroPessoaView extends JPanel {
 			
 			cpfTextField = new JFormattedTextField(mask);
 			cpfTextField.setBounds(66, 110, 311, 20);
+			cpfTextField.getDocument().addDocumentListener(this);
 			add(cpfTextField);
 		} catch (ParseException e1) {
 			e1.printStackTrace();
@@ -106,6 +118,7 @@ public class CadastroPessoaView extends JPanel {
 			
 			nascimentoTextField = new JFormattedTextField(mask);
 			nascimentoTextField.setBounds(150, 210, 86, 20);
+			nascimentoTextField.getDocument().addDocumentListener(this);
 			add(nascimentoTextField);
 		} catch (ParseException e) {
 			// TODO Auto-generated catch block
@@ -122,6 +135,7 @@ public class CadastroPessoaView extends JPanel {
 		sanguineoTextField = new JTextField();
 		sanguineoTextField.setBounds(150, 260, 108, 20);
 		sanguineoTextField.setColumns(10);
+		sanguineoTextField.getDocument().addDocumentListener(this);
 		add(sanguineoTextField);
 	}
 	
@@ -129,6 +143,17 @@ public class CadastroPessoaView extends JPanel {
 		cadastrarButton = new JButton("Cadastrar");
 		cadastrarButton.setFont(new Font("Tahoma", Font.BOLD, 12));
 		cadastrarButton.setBounds(165, 416, 100, 23);
+		cadastrarButton.setEnabled(false);
+		
+		cadastrarButton.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent event) {
+				if (cadastrarButton.isEnabled()) {
+					controller.cadastrar();
+				}
+			}
+		});
+		
 		add(cadastrarButton);
 	}
 	
@@ -136,7 +161,66 @@ public class CadastroPessoaView extends JPanel {
 		limparButton = new JButton("Limpar");
 		limparButton.setFont(new Font("Tahoma", Font.BOLD, 12));
 		limparButton.setBounds(380, 416, 100, 23);
+		
+		limparButton.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent event) {
+				controller.limparCampos();
+			}
+		});
+		
 		add(limparButton);
+	}
+	
+	@Override
+	public void insertUpdate(DocumentEvent e) {
+		check();
+	}
+
+	@Override
+	public void removeUpdate(DocumentEvent e) {
+		check();
+	}
+
+	@Override
+	public void changedUpdate(DocumentEvent e) {
+		check();
+	}
+	
+	private void check() {
+		if (controller.checarCamposVazios()) {
+			cadastrarButton.setEnabled(false);
+		} else {
+			cadastrarButton.setEnabled(true);
+		}
+	}
+
+	public JTextField getNomeTextField() {
+		return nomeTextField;
+	}
+
+	public JFormattedTextField getCpfTextField() {
+		return cpfTextField;
+	}
+	
+	public JComboBox<String> getSexoComboBox() {
+		return sexoComboBox;
+	}
+
+	public JFormattedTextField getNascimentoTextField() {
+		return nascimentoTextField;
+	}
+
+	public JTextField getSanguineoTextField() {
+		return sanguineoTextField;
+	}
+
+	public JButton getCadastrarButton() {
+		return cadastrarButton;
+	}
+
+	public JButton getLimparButton() {
+		return limparButton;
 	}
 	
 }

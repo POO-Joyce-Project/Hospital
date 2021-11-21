@@ -2,6 +2,9 @@ package poo.trabalho.view;
 
 import javax.swing.JLabel;
 import javax.swing.JTextField;
+
+import poo.trabalho.controller.CadastroMedicoController;
+
 import java.awt.Font;
 
 public class CadastroMedicoView extends CadastroPessoaView {
@@ -13,6 +16,8 @@ public class CadastroMedicoView extends CadastroPessoaView {
 	
 	public CadastroMedicoView() {
 		super("Cadastro Médico");
+		
+		controller = new CadastroMedicoController(this);
 		
 		setupEspecialidade();
 		setupCrm();
@@ -27,6 +32,7 @@ public class CadastroMedicoView extends CadastroPessoaView {
 		especialidadeTextField = new JTextField();
 		especialidadeTextField.setBounds(150, 310, 149, 20);
 		especialidadeTextField.setColumns(10);
+		especialidadeTextField.getDocument().addDocumentListener(this);
 		add(especialidadeTextField);
 	}
 	
@@ -39,7 +45,16 @@ public class CadastroMedicoView extends CadastroPessoaView {
 		crmTextField = new JTextField();
 		crmTextField.setBounds(66, 360, 106, 20);
 		crmTextField.setColumns(10);
+		crmTextField.getDocument().addDocumentListener(this);
 		add(crmTextField);
+	}
+
+	public JTextField getCrmTextField() {
+		return crmTextField;
+	}
+
+	public JTextField getEspecialidadeTextField() {
+		return especialidadeTextField;
 	}
 
 }
