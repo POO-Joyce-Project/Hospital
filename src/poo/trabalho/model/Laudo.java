@@ -12,6 +12,7 @@ public class Laudo {
 
 	// Inicializadores
 	public Laudo(int id, String observacao, String medicacaoRegular, String sintomas, String diagnostico, Paciente paciente, Medico medico) {
+		this.id = id;
 		this.observacao = observacao;
 		this.medicacaoRegular = medicacaoRegular;
 		this.sintomas = sintomas;

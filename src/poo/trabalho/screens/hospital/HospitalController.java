@@ -68,6 +68,8 @@ public class HospitalController implements IHospitalController {
 	public void cadastrarLaudo(Laudo laudo, Paciente paciente) {
 		LaudoDAO.cadastrarLaudo(laudo, paciente);
 		
+		hospital.getLaudos().add(laudo);
+		
 		paciente.adicionarLaudo(laudo);
 	}
 
