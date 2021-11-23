@@ -2,6 +2,7 @@ package poo.trabalho.utils;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Random;
 
 public class Utils {
 
@@ -11,6 +12,10 @@ public class Utils {
 
 	public static String formatarNascimento(Date nascimento) {
 		return new SimpleDateFormat("dd/MM/yyyy").format(nascimento);
+	}
+	
+	public static String gerarCRM() {
+		return String.valueOf(new Random().nextInt(999999));
 	}
 
 }

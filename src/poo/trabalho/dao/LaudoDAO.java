@@ -2,6 +2,7 @@ package poo.trabalho.dao;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 
 import poo.trabalho.Principal;
 import poo.trabalho.model.Laudo;
@@ -61,7 +62,22 @@ public class LaudoDAO {
 		String cpfMedico = laudo.getMedico().getCpf();
 		String cpfPaciente = paciente.getCpf();
 		
-		Principal.getMySQL().executeUpdate("INSERT INTO `laudos` (`observacao`, `medicacaoRegular`, `sintomas`, `diagnostico`, `cpfMedico`, `cpfPaciente`) "
-				+ "VALUES ('" + observacao + "', '"+ medicacao + "', '" + sintomas + "', '" + diagnostico + "', '" + cpfMedico + "', '" + cpfPaciente + "');");
+		try {
+			Statement stmt = Principal.getMySQL().getConnection().createStatement();
+			stmt.executeUpdate("INSERT INTO `laudos` (`observacao`, `medicacaoRegular`, `sintomas`, `diagnostico`, `cpfMedico`, `cpfPaciente`) "
+								+ "VALUES ('" + observacao + "', '"+ medicacao + "', '" + sintomas + "', '" + diagnostico + "', '" + cpfMedico + "', '" + cpfPaciente + "');",
+									Statement.RETURN_GENERATED_KEYS);
+
+			ResultSet rs = stmt.getGeneratedKeys();
+
+			if (rs.next()) {
+				laudo.setId(rs.getInt(1));
+			}
+		} catch (SQLException ex) {
+			System.err.println("Erro ao carregar os Laudo: " + ex.getMessage());
+		}
+		
+//		Principal.getMySQL().executeUpdate("INSERT INTO `laudos` (`observacao`, `medicacaoRegular`, `sintomas`, `diagnostico`, `cpfMedico`, `cpfPaciente`) "
+//				+ "VALUES ('" + observacao + "', '"+ medicacao + "', '" + sintomas + "', '" + diagnostico + "', '" + cpfMedico + "', '" + cpfPaciente + "');");
 	}
 }

@@ -39,7 +39,7 @@ public class MySQL {
 				+ "  `nascimento` DATE NOT NULL,"
 				+ "  `tipoSanguineo` VARCHAR(3) NOT NULL,"
 				+ "  `especialidade` VARCHAR(45) NOT NULL,"
-				+ "  `crm` VARCHAR(45) NOT NULL,"
+				+ "  `crm` VARCHAR(6) NOT NULL,"
 				+ "  PRIMARY KEY (`cpf`));");
 
 		executeUpdate(
@@ -83,24 +83,6 @@ public class MySQL {
 		} catch (SQLException exception) {
 			System.out.println("Erro ao conectar o MySQL: " + exception.getMessage());
 		}
-	}
-
-	public void executeUpdateAsync(String update) {
-		Thread thread = new Thread(new Runnable() {
-
-			@Override
-			public void run() {
-				try {
-					Statement statement = getConnection().createStatement();
-					statement.executeUpdate(update);
-					statement.close();
-				} catch (SQLException exception) {
-					System.out.println("Erro ao conectar o MySQL: " + exception.getMessage());
-				}
-			}
-		});
-
-		thread.start();
 	}
 
 	public Connection getConnection() {

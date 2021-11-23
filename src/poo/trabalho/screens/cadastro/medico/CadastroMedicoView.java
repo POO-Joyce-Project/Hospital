@@ -11,7 +11,6 @@ public class CadastroMedicoView extends CadastroPessoaView {
 
 	private static final long serialVersionUID = 622202191394462017L;
 	
-	private JTextField crmTextField;
 	private JTextField especialidadeTextField;
 	
 	public CadastroMedicoView() {
@@ -20,7 +19,6 @@ public class CadastroMedicoView extends CadastroPessoaView {
 		controller = new CadastroMedicoController(this);
 		
 		setupEspecialidade();
-		setupCrm();
 	}
 	
 	private void setupEspecialidade() {
@@ -34,23 +32,6 @@ public class CadastroMedicoView extends CadastroPessoaView {
 		especialidadeTextField.setColumns(10);
 		especialidadeTextField.getDocument().addDocumentListener(this);
 		add(especialidadeTextField);
-	}
-	
-	private void setupCrm() {
-		JLabel crmLabel = new JLabel("CRM: ");
-		crmLabel.setFont(new Font("Tahoma", Font.BOLD, 12));
-		crmLabel.setBounds(10, 362, 46, 14);
-		add(crmLabel);
-		
-		crmTextField = new JTextField();
-		crmTextField.setBounds(215, 360, 300, 20);
-		crmTextField.setColumns(10);
-		crmTextField.getDocument().addDocumentListener(this);
-		add(crmTextField);
-	}
-
-	public JTextField getCrmTextField() {
-		return crmTextField;
 	}
 
 	public JTextField getEspecialidadeTextField() {

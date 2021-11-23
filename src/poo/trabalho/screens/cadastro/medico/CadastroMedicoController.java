@@ -8,6 +8,7 @@ import javax.swing.JOptionPane;
 import poo.trabalho.Principal;
 import poo.trabalho.interfaces.ICadastroController;
 import poo.trabalho.model.Medico;
+import poo.trabalho.utils.Utils;
 
 public class CadastroMedicoController implements ICadastroController {
 
@@ -26,9 +27,8 @@ public class CadastroMedicoController implements ICadastroController {
 			Date nascimento = new SimpleDateFormat("dd/MM/yyyy").parse(view.getNascimentoTextField().getText());
 			String tipoSanguineo = view.getSanguineoComboBox().getSelectedItem().toString();
 			String especialidade = view.getEspecialidadeTextField().getText();
-			String crm = view.getCrmTextField().getText();
 
-			Medico medico = new Medico(nome, cpf, sexo, nascimento, tipoSanguineo, especialidade, crm);
+			Medico medico = new Medico(nome, cpf, sexo, nascimento, tipoSanguineo, especialidade, Utils.gerarCRM());
 
 			Principal.getHospitalController().cadastrarMedico(medico);
 
@@ -50,7 +50,6 @@ public class CadastroMedicoController implements ICadastroController {
 		view.getNascimentoTextField().setValue(null);
 		view.getSanguineoComboBox().setSelectedIndex(0);
 		view.getEspecialidadeTextField().setText("");
-		view.getCrmTextField().setText("");
 	}
 
 	@Override
@@ -58,7 +57,7 @@ public class CadastroMedicoController implements ICadastroController {
 		return view.getNomeTextField().getText().isBlank()
 				|| view.getCpfTextField().getText().replace("_", "").replace(".", "").replace("-", "").isBlank()
 				|| view.getNascimentoTextField().getText().replace("_", "").replace("/", "").isBlank()
-				|| view.getEspecialidadeTextField().getText().isBlank() || view.getCrmTextField().getText().isBlank();
+				|| view.getEspecialidadeTextField().getText().isBlank();
 	}
 
 }
