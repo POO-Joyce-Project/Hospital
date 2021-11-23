@@ -62,11 +62,11 @@ public abstract class CadastroPessoaView extends JPanel implements DocumentListe
 	private void setupName() {
 		JLabel nomeLabel = new JLabel("Nome:");
 		nomeLabel.setFont(new Font("Tahoma", Font.BOLD, 12));
-		nomeLabel.setBounds(10, 63, 46, 14);
+		nomeLabel.setBounds(10, 60, 46, 14);
 		add(nomeLabel);
 		
 		nomeTextField = new JTextField();
-		nomeTextField.setBounds(66, 60, 311, 20);
+		nomeTextField.setBounds(215, 60, 300, 20);
 		nomeTextField.setColumns(10);
 		nomeTextField.getDocument().addDocumentListener(this);
 		
@@ -76,7 +76,7 @@ public abstract class CadastroPessoaView extends JPanel implements DocumentListe
 	private void setupCpf() {
 		JLabel cpfLabel = new JLabel("CPF:");
 		cpfLabel.setFont(new Font("Tahoma", Font.BOLD, 12));
-		cpfLabel.setBounds(10, 114, 46, 14);
+		cpfLabel.setBounds(10, 110, 46, 14);
 		add(cpfLabel);
 		
 		try {
@@ -84,7 +84,7 @@ public abstract class CadastroPessoaView extends JPanel implements DocumentListe
 			mask.setPlaceholderCharacter('_');
 			
 			cpfTextField = new JFormattedTextField(mask);
-			cpfTextField.setBounds(66, 110, 311, 20);
+			cpfTextField.setBounds(215, 110, 300, 20);
 			cpfTextField.getDocument().addDocumentListener(this);
 			add(cpfTextField);
 		} catch (ParseException e1) {
@@ -95,21 +95,21 @@ public abstract class CadastroPessoaView extends JPanel implements DocumentListe
 	private void setupSexo() {
 		JLabel sexoLabel = new JLabel("Sexo:");
 		sexoLabel.setFont(new Font("Tahoma", Font.BOLD, 12));
-		sexoLabel.setBounds(10, 162, 46, 14);
+		sexoLabel.setBounds(10, 160, 46, 14);
 		add(sexoLabel);
 		
 		String[] sexo = new String[] {"Masculino", "Feminino"};
 		
 		sexoComboBox = new JComboBox<String>();
 		sexoComboBox.setModel(new DefaultComboBoxModel<String>(sexo));
-		sexoComboBox.setBounds(66, 160, 108, 20);
+		sexoComboBox.setBounds(215, 160, 108, 20);
 		add(sexoComboBox);
 	}
 	
 	private void setupDataNascimento() {
 		JLabel dataLabel = new JLabel("Data de nascimento:");
 		dataLabel.setFont(new Font("Tahoma", Font.BOLD, 12));
-		dataLabel.setBounds(10, 212, 130, 14);
+		dataLabel.setBounds(10, 210, 130, 14);
 		add(dataLabel);
 		
 		try {
@@ -117,7 +117,7 @@ public abstract class CadastroPessoaView extends JPanel implements DocumentListe
 			mask.setPlaceholderCharacter('_');
 			
 			nascimentoTextField = new JFormattedTextField(mask);
-			nascimentoTextField.setBounds(150, 210, 86, 20);
+			nascimentoTextField.setBounds(215, 210, 300, 20);
 			nascimentoTextField.getDocument().addDocumentListener(this);
 			add(nascimentoTextField);
 		} catch (ParseException e) {
@@ -128,11 +128,11 @@ public abstract class CadastroPessoaView extends JPanel implements DocumentListe
 	private void setupSanguineo() {
 		JLabel tipoLabel = new JLabel("Tipo sanguíneo: ");
 		tipoLabel.setFont(new Font("Tahoma", Font.BOLD, 12));
-		tipoLabel.setBounds(10, 262, 108, 14);
+		tipoLabel.setBounds(10, 260, 108, 14);
 		add(tipoLabel);
 		
 		sanguineoTextField = new JTextField();
-		sanguineoTextField.setBounds(150, 260, 108, 20);
+		sanguineoTextField.setBounds(215, 260, 300, 20);
 		sanguineoTextField.setColumns(10);
 		sanguineoTextField.getDocument().addDocumentListener(this);
 		add(sanguineoTextField);
@@ -141,7 +141,7 @@ public abstract class CadastroPessoaView extends JPanel implements DocumentListe
 	private void setupCadastrarButton() {
 		cadastrarButton = new JButton("Cadastrar");
 		cadastrarButton.setFont(new Font("Tahoma", Font.BOLD, 12));
-		cadastrarButton.setBounds(165, 416, 100, 23);
+		cadastrarButton.setBounds(150, 416, 100, 23);
 		cadastrarButton.setEnabled(false);
 		
 		cadastrarButton.addMouseListener(new MouseAdapter() {
@@ -159,7 +159,7 @@ public abstract class CadastroPessoaView extends JPanel implements DocumentListe
 	private void setupLimparButton() {
 		limparButton = new JButton("Limpar");
 		limparButton.setFont(new Font("Tahoma", Font.BOLD, 12));
-		limparButton.setBounds(380, 416, 100, 23);
+		limparButton.setBounds(365, 416, 100, 23);
 		
 		limparButton.addMouseListener(new MouseAdapter() {
 			@Override

@@ -30,7 +30,7 @@ public class CadastroMedicoView extends CadastroPessoaView {
 		add(especilidadeLabel);
 		
 		especialidadeTextField = new JTextField();
-		especialidadeTextField.setBounds(150, 310, 149, 20);
+		especialidadeTextField.setBounds(215, 310, 300, 20);
 		especialidadeTextField.setColumns(10);
 		especialidadeTextField.getDocument().addDocumentListener(this);
 		add(especialidadeTextField);
@@ -43,7 +43,7 @@ public class CadastroMedicoView extends CadastroPessoaView {
 		add(crmLabel);
 		
 		crmTextField = new JTextField();
-		crmTextField.setBounds(66, 360, 106, 20);
+		crmTextField.setBounds(215, 360, 300, 20);
 		crmTextField.setColumns(10);
 		crmTextField.getDocument().addDocumentListener(this);
 		add(crmTextField);

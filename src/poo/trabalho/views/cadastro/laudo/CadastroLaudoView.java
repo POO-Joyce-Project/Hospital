@@ -62,7 +62,7 @@ public class CadastroLaudoView extends JPanel implements DocumentListener{
 	private void setupPaciente() {
 		JLabel cpfLabel = new JLabel("CPF do paciente:");
 		cpfLabel.setFont(new Font("Tahoma", Font.BOLD, 12));
-		cpfLabel.setBounds(10, 70, 110, 14);
+		cpfLabel.setBounds(10, 60, 110, 14);
 		add(cpfLabel);
 		
 		try {
@@ -70,7 +70,7 @@ public class CadastroLaudoView extends JPanel implements DocumentListener{
 			mask.setPlaceholderCharacter('_');
 			
 			cpfPacienteTextField = new JFormattedTextField(mask);
-			cpfPacienteTextField.setBounds(215, 70, 298, 20);
+			cpfPacienteTextField.setBounds(215, 60, 300, 20);
 			cpfPacienteTextField.getDocument().addDocumentListener(this);
 			add(cpfPacienteTextField);
 		} catch (ParseException e) {
@@ -81,7 +81,7 @@ public class CadastroLaudoView extends JPanel implements DocumentListener{
 	private void setupMedico() {
 		JLabel medicoLabel = new JLabel("CPF do médico responsável:");
 		medicoLabel.setFont(new Font("Tahoma", Font.BOLD, 12));
-		medicoLabel.setBounds(10, 120, 179, 14);
+		medicoLabel.setBounds(10, 110, 179, 14);
 		add(medicoLabel);
 
 		try {
@@ -89,7 +89,7 @@ public class CadastroLaudoView extends JPanel implements DocumentListener{
 			mask.setPlaceholderCharacter('_');
 			
 			medicoTextField = new JFormattedTextField(mask);
-			medicoTextField.setBounds(215, 120, 298, 20);
+			medicoTextField.setBounds(215, 110, 300, 20);
 			medicoTextField.getDocument().addDocumentListener(this);
 			add(medicoTextField);
 		} catch (ParseException e) {
@@ -100,11 +100,11 @@ public class CadastroLaudoView extends JPanel implements DocumentListener{
 	private void setupSintomas() {
 		JLabel sintomasLabel = new JLabel("Sintomas:");
 		sintomasLabel.setFont(new Font("Tahoma", Font.BOLD, 12));
-		sintomasLabel.setBounds(10, 170, 134, 14);
+		sintomasLabel.setBounds(10, 160, 134, 14);
 		add(sintomasLabel);
 
 		sintomasTextField = new JFormattedTextField();
-		sintomasTextField.setBounds(215, 170, 298, 20);
+		sintomasTextField.setBounds(215, 160, 300, 20);
 		sintomasTextField.getDocument().addDocumentListener(this);
 		add(sintomasTextField);
 	}
@@ -112,11 +112,11 @@ public class CadastroLaudoView extends JPanel implements DocumentListener{
 	private void setupMedicacao() {
 		JLabel medicacaoLabel = new JLabel("Medicação regular:");
 		medicacaoLabel.setFont(new Font("Tahoma", Font.BOLD, 12));
-		medicacaoLabel.setBounds(10, 220, 134, 14);
+		medicacaoLabel.setBounds(10, 210, 134, 14);
 		add(medicacaoLabel);
 
 		medicacaoTextField = new JFormattedTextField();
-		medicacaoTextField.setBounds(215, 220, 298, 20);
+		medicacaoTextField.setBounds(215, 210, 300, 20);
 		medicacaoTextField.getDocument().addDocumentListener(this);
 		add(medicacaoTextField);
 	}
@@ -124,11 +124,11 @@ public class CadastroLaudoView extends JPanel implements DocumentListener{
 	private void setupObservacao() {
 		JLabel observacaoLabel = new JLabel("Observação:");
 		observacaoLabel.setFont(new Font("Tahoma", Font.BOLD, 12));
-		observacaoLabel.setBounds(10, 270, 134, 14);
+		observacaoLabel.setBounds(10, 260, 134, 14);
 		add(observacaoLabel);
 
 		observacaoTextField = new JFormattedTextField();
-		observacaoTextField.setBounds(215, 270, 298, 20);
+		observacaoTextField.setBounds(215, 260, 300, 20);
 		observacaoTextField.getDocument().addDocumentListener(this);
 		add(observacaoTextField);
 	}
@@ -136,11 +136,11 @@ public class CadastroLaudoView extends JPanel implements DocumentListener{
 	private void setupDiagnostico() {
 		JLabel diagonistoLabel = new JLabel("Diagnóstico:");
 		diagonistoLabel.setFont(new Font("Tahoma", Font.BOLD, 12));
-		diagonistoLabel.setBounds(10, 320, 134, 14);
+		diagonistoLabel.setBounds(10, 310, 134, 14);
 		add(diagonistoLabel);
 
 		diagnosticoTextField = new JFormattedTextField();
-		diagnosticoTextField.setBounds(215, 320, 298, 20);
+		diagnosticoTextField.setBounds(215, 310, 300, 20);
 		diagnosticoTextField.getDocument().addDocumentListener(this);
 		add(diagnosticoTextField);
 	}
