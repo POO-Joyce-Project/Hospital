@@ -7,11 +7,11 @@ public abstract class Pessoa {
 
 	private String nome;
 	private String cpf;
-	private char sexo;
+	private String sexo;
 	private Date dataNascimento;
 	private String tipoSanguineo;
 
-	public Pessoa(String nome, String cpf, char sexo, Date dataNascimento, String tipoSanguineo) {
+	public Pessoa(String nome, String cpf, String sexo, Date dataNascimento, String tipoSanguineo) {
 		this.nome = nome;
 		this.cpf = cpf;
 		this.sexo = sexo;
@@ -20,7 +20,7 @@ public abstract class Pessoa {
 	}
 
 	public Pessoa() {
-		this(null, null, '?', null, null);
+		this(null, null, null, null, null);
 	}
 
 	public String getCpf() {
@@ -39,11 +39,11 @@ public abstract class Pessoa {
 		this.nome = nome;
 	}
 	
-	public char getSexo() {
+	public String getSexo() {
 		return sexo;
 	}
 
-	public void setSexo(char sexo) {
+	public void setSexo(String sexo) {
 		this.sexo = sexo;
 	}
 

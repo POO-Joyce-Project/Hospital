@@ -8,5 +8,12 @@ public class ConsultaMedicoView extends ConsultaPessoaView {
 
 	public ConsultaMedicoView() {
 		super();
+
+		tableModel.addColumn("Especialidade");
+		tableModel.addColumn("CRM");
+
+		controller = new ConsultaMedicoController(this);
+		controller.carregarDados();
 	}
+
 }

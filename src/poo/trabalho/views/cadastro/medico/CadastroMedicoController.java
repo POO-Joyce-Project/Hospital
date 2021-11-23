@@ -1,7 +1,12 @@
 package poo.trabalho.views.cadastro.medico;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 import javax.swing.JOptionPane;
 
+import poo.trabalho.Principal;
+import poo.trabalho.model.Medico;
 import poo.trabalho.views.cadastro.ICadastroController;
 
 public class CadastroMedicoController implements ICadastroController {
@@ -14,10 +19,25 @@ public class CadastroMedicoController implements ICadastroController {
 
 	@Override
 	public void cadastrar() {
-		// TODO: Implementar persistência com o banco de dados.
+		try {
+			String nome = view.getNomeTextField().getText();
+			String cpf = view.getCpfTextField().getText().replace(".", "").replace("-", "");
+			String sexo = view.getSexoComboBox().getSelectedItem().toString();
+			Date nascimento = new SimpleDateFormat("dd/MM/yyyy").parse(view.getNascimentoTextField().getText());
+			String tipoSanguineo = view.getSanguineoTextField().getText();
+			String especialidade = view.getEspecialidadeTextField().getText();
+			String crm = view.getCrmTextField().getText();
 
-		JOptionPane.showMessageDialog(view, "Cadastro realizado com sucesso!", "SUCESSO",
-				JOptionPane.INFORMATION_MESSAGE);
+			Medico medico = new Medico(nome, cpf, sexo, nascimento, tipoSanguineo, especialidade, crm);
+
+			Principal.getHospitalController().cadastrarMedico(medico);
+
+			JOptionPane.showMessageDialog(view, "Cadastro realizado com sucesso!", "SUCESSO", JOptionPane.INFORMATION_MESSAGE);
+		} catch (Exception exception) {
+			JOptionPane.showMessageDialog(view, "Não foi possível realizar o cadastro!", "ERROR", JOptionPane.ERROR_MESSAGE);
+
+			System.err.println("Não foi possível cadastrar um novo médico: " + exception);
+		}
 
 		limparCampos();
 	}

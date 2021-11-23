@@ -8,6 +8,9 @@ public class ConsultaPacienteView extends ConsultaPessoaView {
 
 	public ConsultaPacienteView() {
 		super();
+		
+		controller = new ConsultaPacienteController(this);
+		controller.carregarDados();
 	}
-	
+
 }

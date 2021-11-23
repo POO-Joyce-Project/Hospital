@@ -25,6 +25,8 @@ public abstract class CadastroPessoaView extends JPanel implements DocumentListe
 	
 	private static final long serialVersionUID = -6296201519154331596L;
 	
+	protected ICadastroController controller;
+	
 	protected JTextField nomeTextField;
 	protected JFormattedTextField cpfTextField;
 	protected JComboBox<String> sexoComboBox;
@@ -32,8 +34,6 @@ public abstract class CadastroPessoaView extends JPanel implements DocumentListe
 	protected JTextField sanguineoTextField;
 	protected JButton cadastrarButton;
 	protected JButton limparButton;
-	
-	protected ICadastroController controller;
 	
 	public CadastroPessoaView(String title) {
 		setupTitle(title);
@@ -121,7 +121,6 @@ public abstract class CadastroPessoaView extends JPanel implements DocumentListe
 			nascimentoTextField.getDocument().addDocumentListener(this);
 			add(nascimentoTextField);
 		} catch (ParseException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
