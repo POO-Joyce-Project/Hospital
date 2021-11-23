@@ -31,7 +31,7 @@ public abstract class CadastroPessoaView extends JPanel implements DocumentListe
 	protected JFormattedTextField cpfTextField;
 	protected JComboBox<String> sexoComboBox;
 	protected JFormattedTextField nascimentoTextField;
-	protected JTextField sanguineoTextField;
+	protected JComboBox<String> sanguineoComboBox;
 	protected JButton cadastrarButton;
 	protected JButton limparButton;
 	
@@ -131,11 +131,12 @@ public abstract class CadastroPessoaView extends JPanel implements DocumentListe
 		tipoLabel.setBounds(10, 260, 108, 14);
 		add(tipoLabel);
 		
-		sanguineoTextField = new JTextField();
-		sanguineoTextField.setBounds(215, 260, 300, 20);
-		sanguineoTextField.setColumns(10);
-		sanguineoTextField.getDocument().addDocumentListener(this);
-		add(sanguineoTextField);
+		String[] tipoSanguineo = new String[] {"A-", "A+", "B-", "B+", "AB-", "AB+", "O-", "O+"};
+		
+		sanguineoComboBox = new JComboBox<String>();
+		sanguineoComboBox.setModel(new DefaultComboBoxModel<String>(tipoSanguineo));
+		sanguineoComboBox.setBounds(215, 260, 100, 20);
+		add(sanguineoComboBox);
 	}
 	
 	private void setupCadastrarButton() {
@@ -210,8 +211,8 @@ public abstract class CadastroPessoaView extends JPanel implements DocumentListe
 		return nascimentoTextField;
 	}
 
-	public JTextField getSanguineoTextField() {
-		return sanguineoTextField;
+	public JComboBox<String> getSanguineoComboBox() {
+		return sanguineoComboBox;
 	}
 
 	public JButton getCadastrarButton() {

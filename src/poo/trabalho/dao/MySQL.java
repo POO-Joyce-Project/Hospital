@@ -37,7 +37,7 @@ public class MySQL {
 				+ "  `nome` VARCHAR(45) NOT NULL,"
 				+ "  `sexo` VARCHAR(10) NOT NULL,"
 				+ "  `nascimento` DATE NOT NULL,"
-				+ "  `tipoSanguineo` VARCHAR(2) NOT NULL,"
+				+ "  `tipoSanguineo` VARCHAR(3) NOT NULL,"
 				+ "  `especialidade` VARCHAR(45) NOT NULL,"
 				+ "  `crm` VARCHAR(45) NOT NULL,"
 				+ "  PRIMARY KEY (`cpf`));");
@@ -48,7 +48,7 @@ public class MySQL {
 				+ "  `nome` VARCHAR(45) NOT NULL,"
 				+ "  `sexo` VARCHAR(10) NOT NULL,"
 				+ "  `nascimento` DATE NOT NULL,"
-				+ "  `tipoSanguineo` VARCHAR(2) NOT NULL,"
+				+ "  `tipoSanguineo` VARCHAR(3) NOT NULL,"
 				+ "  PRIMARY KEY (`cpf`));");
 
 		executeUpdate(

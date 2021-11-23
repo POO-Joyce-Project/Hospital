@@ -24,7 +24,7 @@ public class CadastroPacienteController implements ICadastroController {
 			String cpf = view.getCpfTextField().getText().replace(".", "").replace("-", "");
 			String sexo = view.getSexoComboBox().getSelectedItem().toString();
 			Date nascimento = new SimpleDateFormat("dd/MM/yyyy").parse(view.getNascimentoTextField().getText());
-			String tipoSanguineo = view.getSanguineoTextField().getText();
+			String tipoSanguineo = view.getSanguineoComboBox().getSelectedItem().toString();
 
 			Paciente paciente = new Paciente(nome, cpf, sexo, nascimento, tipoSanguineo, null);
 
@@ -46,15 +46,14 @@ public class CadastroPacienteController implements ICadastroController {
 		view.getCpfTextField().setValue(null);
 		view.getSexoComboBox().setSelectedIndex(0);
 		view.getNascimentoTextField().setValue(null);
-		view.getSanguineoTextField().setText("");
+		view.getSanguineoComboBox().setSelectedIndex(0);
 	}
 
 	@Override
 	public boolean checarCamposVazios() {
 		return view.getNomeTextField().getText().isBlank()
 				|| view.getCpfTextField().getText().replace("_", "").replace(".", "").replace("-", "").isBlank()
-				|| view.getNascimentoTextField().getText().replace("_", "").replace("/", "").isBlank()
-				|| view.getSanguineoTextField().getText().isBlank();
+				|| view.getNascimentoTextField().getText().replace("_", "").replace("/", "").isBlank();
 	}
 
 }

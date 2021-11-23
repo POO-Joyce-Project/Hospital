@@ -24,7 +24,7 @@ public class CadastroMedicoController implements ICadastroController {
 			String cpf = view.getCpfTextField().getText().replace(".", "").replace("-", "");
 			String sexo = view.getSexoComboBox().getSelectedItem().toString();
 			Date nascimento = new SimpleDateFormat("dd/MM/yyyy").parse(view.getNascimentoTextField().getText());
-			String tipoSanguineo = view.getSanguineoTextField().getText();
+			String tipoSanguineo = view.getSanguineoComboBox().getSelectedItem().toString();
 			String especialidade = view.getEspecialidadeTextField().getText();
 			String crm = view.getCrmTextField().getText();
 
@@ -48,7 +48,7 @@ public class CadastroMedicoController implements ICadastroController {
 		view.getCpfTextField().setValue(null);
 		view.getSexoComboBox().setSelectedIndex(0);
 		view.getNascimentoTextField().setValue(null);
-		view.getSanguineoTextField().setText("");
+		view.getSanguineoComboBox().setSelectedIndex(0);
 		view.getEspecialidadeTextField().setText("");
 		view.getCrmTextField().setText("");
 	}
@@ -58,7 +58,6 @@ public class CadastroMedicoController implements ICadastroController {
 		return view.getNomeTextField().getText().isBlank()
 				|| view.getCpfTextField().getText().replace("_", "").replace(".", "").replace("-", "").isBlank()
 				|| view.getNascimentoTextField().getText().replace("_", "").replace("/", "").isBlank()
-				|| view.getSanguineoTextField().getText().isBlank()
 				|| view.getEspecialidadeTextField().getText().isBlank() || view.getCrmTextField().getText().isBlank();
 	}
 
