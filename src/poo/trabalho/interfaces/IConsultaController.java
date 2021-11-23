@@ -1,4 +1,4 @@
-package poo.trabalho.views.consulta;
+package poo.trabalho.interfaces;
 
 public interface IConsultaController {
 	

@@ -1,11 +1,12 @@
-package poo.trabalho.views.cadastro;
+package poo.trabalho.screens.cadastro;
 
 import javax.swing.JPanel;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 import javax.swing.text.MaskFormatter;
 
-import poo.trabalho.views.hospital.HospitalView;
+import poo.trabalho.interfaces.ICadastroController;
+import poo.trabalho.screens.hospital.HospitalView;
 
 import java.text.ParseException;
 

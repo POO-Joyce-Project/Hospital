@@ -1,6 +1,6 @@
-package poo.trabalho.views.consulta.paciente;
+package poo.trabalho.screens.consulta.paciente;
 
-import poo.trabalho.views.consulta.ConsultaPessoaView;
+import poo.trabalho.screens.consulta.ConsultaPessoaView;
 
 public class ConsultaPacienteView extends ConsultaPessoaView {
 

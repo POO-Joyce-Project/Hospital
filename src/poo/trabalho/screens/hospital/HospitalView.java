@@ -1,4 +1,4 @@
-package poo.trabalho.views.hospital;
+package poo.trabalho.screens.hospital;
 
 import java.awt.BorderLayout;
 
@@ -6,12 +6,12 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
-import poo.trabalho.views.cadastro.laudo.CadastroLaudoView;
-import poo.trabalho.views.cadastro.medico.CadastroMedicoView;
-import poo.trabalho.views.cadastro.paciente.CadastroPacienteView;
-import poo.trabalho.views.consulta.laudo.ConsultaLaudoView;
-import poo.trabalho.views.consulta.medico.ConsultaMedicoView;
-import poo.trabalho.views.consulta.paciente.ConsultaPacienteView;
+import poo.trabalho.screens.cadastro.laudo.CadastroLaudoView;
+import poo.trabalho.screens.cadastro.medico.CadastroMedicoView;
+import poo.trabalho.screens.cadastro.paciente.CadastroPacienteView;
+import poo.trabalho.screens.consulta.laudo.ConsultaLaudoView;
+import poo.trabalho.screens.consulta.medico.ConsultaMedicoView;
+import poo.trabalho.screens.consulta.paciente.ConsultaPacienteView;
 
 import javax.swing.JTabbedPane;
 import java.awt.event.ComponentAdapter;

@@ -1,4 +1,4 @@
-package poo.trabalho.views.cadastro.medico;
+package poo.trabalho.screens.cadastro.medico;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -6,8 +6,8 @@ import java.util.Date;
 import javax.swing.JOptionPane;
 
 import poo.trabalho.Principal;
+import poo.trabalho.interfaces.ICadastroController;
 import poo.trabalho.model.Medico;
-import poo.trabalho.views.cadastro.ICadastroController;
 
 public class CadastroMedicoController implements ICadastroController {
 

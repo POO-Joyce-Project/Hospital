@@ -1,9 +1,12 @@
-package poo.trabalho.views.consulta;
+package poo.trabalho.screens.consulta;
 
 import javax.swing.JPanel;
 
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
+
+import poo.trabalho.interfaces.IConsultaController;
+
 import javax.swing.JScrollPane;
 
 public abstract class ConsultaPessoaView extends JPanel {

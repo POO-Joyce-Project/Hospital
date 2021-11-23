@@ -1,4 +1,4 @@
-package poo.trabalho.views.consulta.laudo;
+package poo.trabalho.screens.consulta.laudo;
 
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -7,7 +7,7 @@ import javax.swing.JTable;
 import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
 
-import poo.trabalho.views.consulta.IConsultaController;
+import poo.trabalho.interfaces.IConsultaController;
 
 public class ConsultaLaudoView extends JPanel {
 	

@@ -1,8 +1,9 @@
-package poo.trabalho.views.hospital;
+package poo.trabalho.screens.hospital;
 
 import poo.trabalho.dao.LaudoDAO;
 import poo.trabalho.dao.MedicoDAO;
 import poo.trabalho.dao.PacienteDAO;
+import poo.trabalho.interfaces.IHospitalController;
 import poo.trabalho.model.Hospital;
 import poo.trabalho.model.Laudo;
 import poo.trabalho.model.Medico;

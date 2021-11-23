@@ -1,4 +1,4 @@
-package poo.trabalho.views.hospital;
+package poo.trabalho.interfaces;
 
 import poo.trabalho.model.Laudo;
 import poo.trabalho.model.Medico;

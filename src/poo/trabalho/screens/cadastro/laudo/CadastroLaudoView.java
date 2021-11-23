@@ -1,4 +1,4 @@
-package poo.trabalho.views.cadastro.laudo;
+package poo.trabalho.screens.cadastro.laudo;
 
 import java.awt.Font;
 
@@ -9,8 +9,8 @@ import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
 import javax.swing.text.MaskFormatter;
 
-import poo.trabalho.views.cadastro.ICadastroController;
-import poo.trabalho.views.hospital.HospitalView;
+import poo.trabalho.interfaces.ICadastroController;
+import poo.trabalho.screens.hospital.HospitalView;
 import javax.swing.JFormattedTextField;
 import javax.swing.JButton;
 import java.awt.event.MouseAdapter;

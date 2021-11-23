@@ -6,8 +6,8 @@ import poo.trabalho.dao.LaudoDAO;
 import poo.trabalho.dao.MedicoDAO;
 import poo.trabalho.dao.MySQL;
 import poo.trabalho.dao.PacienteDAO;
-import poo.trabalho.views.hospital.HospitalController;
-import poo.trabalho.views.hospital.HospitalView;
+import poo.trabalho.screens.hospital.HospitalController;
+import poo.trabalho.screens.hospital.HospitalView;
 
 public class Principal {
 

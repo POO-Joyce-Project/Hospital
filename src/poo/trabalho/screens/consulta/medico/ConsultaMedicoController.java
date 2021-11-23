@@ -1,11 +1,11 @@
-package poo.trabalho.views.consulta.medico;
+package poo.trabalho.screens.consulta.medico;
 
 import java.util.List;
 
 import poo.trabalho.Principal;
+import poo.trabalho.interfaces.IConsultaController;
 import poo.trabalho.model.Medico;
 import poo.trabalho.utils.Utils;
-import poo.trabalho.views.consulta.IConsultaController;
 
 public class ConsultaMedicoController implements IConsultaController {
 

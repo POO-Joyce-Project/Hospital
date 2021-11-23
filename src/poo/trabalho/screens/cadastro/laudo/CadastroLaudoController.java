@@ -1,12 +1,12 @@
-package poo.trabalho.views.cadastro.laudo;
+package poo.trabalho.screens.cadastro.laudo;
 
 import javax.swing.JOptionPane;
 
 import poo.trabalho.Principal;
+import poo.trabalho.interfaces.ICadastroController;
 import poo.trabalho.model.Laudo;
 import poo.trabalho.model.Medico;
 import poo.trabalho.model.Paciente;
-import poo.trabalho.views.cadastro.ICadastroController;
 
 public class CadastroLaudoController implements ICadastroController {
 	

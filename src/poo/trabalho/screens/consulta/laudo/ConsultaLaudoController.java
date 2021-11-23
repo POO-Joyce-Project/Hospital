@@ -1,11 +1,11 @@
-package poo.trabalho.views.consulta.laudo;
+package poo.trabalho.screens.consulta.laudo;
 
 import java.util.List;
 
 import poo.trabalho.Principal;
+import poo.trabalho.interfaces.IConsultaController;
 import poo.trabalho.model.Laudo;
 import poo.trabalho.utils.Utils;
-import poo.trabalho.views.consulta.IConsultaController;
 
 public class ConsultaLaudoController implements IConsultaController {
 

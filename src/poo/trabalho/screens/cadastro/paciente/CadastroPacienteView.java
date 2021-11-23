@@ -1,6 +1,6 @@
-package poo.trabalho.views.cadastro.paciente;
+package poo.trabalho.screens.cadastro.paciente;
 
-import poo.trabalho.views.cadastro.CadastroPessoaView;
+import poo.trabalho.screens.cadastro.CadastroPessoaView;
 
 public class CadastroPacienteView extends CadastroPessoaView {
 	
